@@ -14,6 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { Link, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import Home1 from './Home1';
+import Footer from '../Footer/Footer';
 
 export default function PrimarySearchAppBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -174,6 +175,7 @@ export default function PrimarySearchAppBar() {
                     <Switch>
                         <Route path="/Home1">
                             <Home1 />
+                            <Footer/>
                         </Route>
                         <Route path="/Test">
 
