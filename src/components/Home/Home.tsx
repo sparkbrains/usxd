@@ -7,6 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import CardMedia from '@material-ui/core/CardMedia';
 
 const Home = () => {
 
@@ -22,7 +23,7 @@ const Home = () => {
                     <Grid item xs={6}>
                         <Typography variant="subtitle1" color="textSecondary">
                             <h1 style={{ textAlign: "left", fontSize: "55px", color: "black", lineHeight: "63px" }}> Create in Decentralized Economy</h1>
-                            <p style={{ textAlign: "left", marginLeft: "30px", marginRight: "30px", marginBottom: "50px" }}>
+                            <p style={{ textAlign: "left", marginRight: "30px", marginBottom: "50px" }}>
                                 Our partners will launch later also ATM, POS, Visa and
                                 Mastercard, NFC p2p wallet, which will allow USxD to enter the
                                 real economy. They want to create a network of merchants that
