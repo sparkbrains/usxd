@@ -1,191 +1,207 @@
-import * as React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Box from '@material-ui/core/Box';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import Paper from '@material-ui/core/Paper';
-import "./Home.css";
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import { Link, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import PermIdentityIcon from '@material-ui/icons/PermIdentity';
-import Home1 from './Home1';
-import Footer from '../Footer/Footer';
 
-export default function PrimarySearchAppBar() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+import { Typography, } from "@material-ui/core";
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import { useEffect } from 'react'
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
 
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+const Home = () => {
 
-    const handleMobileMenuClose = () => {
-        setMobileMoreAnchorEl(null);
-    };
+    useEffect(() => {
+        document.title = "Home"
+    }, [])
 
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
-    };
-
-
-    const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-        <Menu
-            style={{ top: "50px" }}
-
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            <MenuItem onClick={handleMenuClose}><PermIdentityIcon /> My Profile</MenuItem>
-
-        </Menu>
-    );
-
-    const mobileMenuId = 'primary-search-account-menu-mobile';
-    const renderMobileMenu = (
-        <Menu
-            anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            id={mobileMenuId}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            open={isMobileMenuOpen}
-            onClose={handleMobileMenuClose}
-        >
-
-            <MenuItem >
-                <IconButton
-                    aria-label="account of current user"
-                    // aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
-                    color="inherit"
-                >
-                    <AccountCircle />
-                </IconButton>
-                <p>Profile</p>
-            </MenuItem>
-        </Menu>
-    );
 
     return (
-        <Router>
-            <div>
-                <Paper square>
-                    <Box  >
-                        <AppBar position="static"  >
-                            <div className="align">
-                                <Toolbar>
-                                    <div className="left">
+        <div>
+            <Container>
+                <Grid container spacing={2}>
+                    <Grid item xs={6}>
+                        <Typography variant="subtitle1" color="textSecondary">
+                            <h1 style={{ textAlign: "left", fontSize: "55px", color: "black", lineHeight: "63px" }}> Create in Decentralized Economy</h1>
+                            <p style={{ textAlign: "left", marginLeft: "30px", marginRight: "30px", marginBottom: "50px" }}>
+                                Our partners will launch later also ATM, POS, Visa and
+                                Mastercard, NFC p2p wallet, which will allow USxD to enter the
+                                real economy. They want to create a network of merchants that
+                                will accept USxD.
+                            </p>
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <img src="/section1-currency.png" alt="currencyimg" width="100%" />
+                    </Grid>
+                </Grid>
+                <h1 style={{ fontSize: "55px", color: "black" }}> Features of Dexconomy Platform and USxd Stablecoin</h1>
+                <div style={{ display: "flex", marginTop: "30px" }}>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                                <img src="/section2-currency.png" alt="currencyimg" height="140" />
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        Issuing Visa, Mastercard can withdraw Global payment method Touchless payments with NFC
+                                        money at ATMs. The system will
+                                        automatically convert from USxD to Fiat
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+
+                        </Card>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                                <img src="/section2-global.png" alt="globalimg" height="140" />
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        Global payment method
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+
+                        </Card>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                                <img src="/section2-nfc.png" alt="nfcimg" height="140" />
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        Touchless payments with NFC
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+
+                        </Card>
+                    </Grid>
+                </div>
+                <div style={{ display: "flex", marginTop: "50px" }}>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                                <img src="/section2-wallet.png" alt="walletimg" height="140" />
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        p2p wallet
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+
+                        </Card>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                                <img src="/section2-package.png" alt="packageiimg" height="140" />
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        Activate packages to earn daily, monthly and yearly
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+
+                        </Card>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                                <img src="/section3-network-3.png" alt="networkimg" height="140" />
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        Multi-Level Network Building,with 8 levels
+
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+
+                        </Card>
+                    </Grid>
+                </div>
+                <h1 style={{ fontSize: "50px", color: "black" }}>Coining Package</h1>
+                <Grid container spacing={2}>
+                    <Grid item xs={6}>
+                        <img src="/section2-package.png" alt="packageimg" width="100%" />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography variant="subtitle1" color="textSecondary">
+                            <h1 style={{ textAlign: "left", fontSize: "55px", color: "black", lineHeight: "63px" }}> Create in Decentralized Economy</h1>
+                            <p style={{ textAlign: "left", marginLeft: "30px", marginRight: "30px", marginBottom: "50px" }}>
+                                We have a master's expertise in mobile app development and helps you to get maximum ROI and boost sales.
+                            </p>
+                        </Typography>
+                    </Grid>
+
+                </Grid>
+                <h1 style={{ fontSize: "50px", color: "black" }}>Network Building</h1>
+                <p style={{ marginTop: "50px" }}>Get access to thousands of partners and exponential profits from infinite referrals</p>
+                <div style={{ display: "flex", marginTop: "50px" }}>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                                <img src="/section3-network-3.png" alt="package" height="140" />
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                                        across all continents except Antarctica
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <Button variant="contained" color="primary" >
+                                Custom CSS
+                            </Button>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                            <img src="/section3-network-2.png" alt="nice" height="140"/>.
+                                
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                                        across all continents except Antarctica
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <Button variant="contained" color="primary" >
+                                Custom CSS
+                            </Button>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Card className="card">
+                            <CardActionArea>
+                                <img src="/section3-network-3.png" alt="package" height="140" />
+                                <CardContent>
+
+                                    <Typography component="p">
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                                        across all continents except Antarctica
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <Button variant="contained" color="primary" >
+                                Custom CSS
+                            </Button>
+                        </Card>
+                    </Grid>
+                </div>
+            </Container>
+        </div>
 
 
-                                        <Link className="id" to="/home1"
-                                        >
-                                            <ListItem button key={'Home1'}>
-
-                                                <ListItemText primary={'What is USxD?'} style={{ color: "#122a4d", fontSize: "20px" }} />
-
-                                            </ListItem >
-                                        </Link>
-
-
-                                        <Link className="id" to="/Memberships"
-                                        >
-                                            <ListItem button key={'Memberships'}>
-                                                <ListItemText primary={'Features of USxD'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                                            </ListItem>
-                                        </Link>
-
-
-                                        <Link className="id" to="/Activity"
-                                        >
-                                            <ListItem button key={'Activity'}>
-                                                <ListItemText primary={'Coining Package'} style={{ color: "#122a4d" }} />
-                                            </ListItem>
-                                        </Link>
-
-                                        <Link className="id" to="/Test"
-                                        >
-                                            <ListItem button key={' Engage'}>
-                                                <ListItemText primary={'Network Building'} style={{ color: "#122a4d" }} />
-                                            </ListItem>
-                                        </Link>
-                                        <Link className="id" to="/Test"
-                                        >
-                                            <ListItem button key={' Engage'}>
-                                                <ListItemText primary={'Launch App'} style={{ backgroundColor: "#267326", color: "black" }} />
-                                            </ListItem>
-                                        </Link>
-
-
-                                    </div>
-
-
-                                    <Box sx={{ flexGrow: 1 }} />
-                                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                        <IconButton
-                                            edge="end"
-                                            aria-label="account of current user"
-                                            aria-controls={menuId}
-                                            aria-haspopup="true"
-
-
-                                        >
-                                            <AccountCircle />
-                                        </IconButton>
-                                    </Box>
-                                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                                        <IconButton
-                                            aria-label="show more"
-                                            aria-controls={mobileMenuId}
-                                            aria-haspopup="true"
-
-                                            color="inherit"
-                                        >
-                                            <MoreIcon />
-                                        </IconButton>
-                                    </Box>
-                                </Toolbar>
-
-                            </div>
-                        </AppBar>
-                        {renderMobileMenu}
-                        {renderMenu}
-                    </Box>
-                    <Switch>
-                        <Route path="/Home1">
-                            <Home1 />
-                            <Footer/>
-                        </Route>
-                        <Route path="/Test">
-
-                        </Route>
-                    </Switch>
-                </Paper>
-
-            </div>
-        </Router>
-    );
-
-
+    )
 };
+
+export default Home
