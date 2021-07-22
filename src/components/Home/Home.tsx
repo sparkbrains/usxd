@@ -7,9 +7,34 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import CardMedia from '@material-ui/core/CardMedia';
+
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+const useStyles = makeStyles({
+    table: {
+      minWidth: 650,
+    },
+  });
+  function createData(name: string, calories: number, fat: number, carbs: number, protein: number) {
+    return { name, calories, fat, carbs, protein };
+  }
+  const rows = [
+    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+    createData('Eclair', 262, 16.0, 24, 6.0),
+    createData('Cupcake', 305, 3.7, 67, 4.3),
+    createData('Gingerbread', 356, 16.0, 49, 3.9),
+  ];
 
 const Home = () => {
+    const classes = useStyles();
 
     useEffect(() => {
         document.title = "Home"
@@ -36,9 +61,9 @@ const Home = () => {
                     </Grid>
                 </Grid>
                 <h1 style={{ fontSize: "55px", color: "black" }}> Features of Dexconomy Platform and USxd Stablecoin</h1>
-                <div style={{ display: "flex", marginTop: "30px" }}>
+                <div style={{ display: "flex", marginTop: "30px", }}>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
                             <CardActionArea>
                                 <img src="/section2-currency.png" alt="currencyimg" height="140" />
                                 <CardContent>
@@ -54,7 +79,7 @@ const Home = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
                             <CardActionArea>
                                 <img src="/section2-global.png" alt="globalimg" height="140" />
                                 <CardContent>
@@ -68,7 +93,7 @@ const Home = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card" style={{ height: "100%" ,boxShadow:"none"  }}>
                             <CardActionArea>
                                 <img src="/section2-nfc.png" alt="nfcimg" height="140" />
                                 <CardContent>
@@ -84,7 +109,7 @@ const Home = () => {
                 </div>
                 <div style={{ display: "flex", marginTop: "50px" }}>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
                             <CardActionArea>
                                 <img src="/section2-wallet.png" alt="walletimg" height="140" />
                                 <CardContent>
@@ -98,7 +123,7 @@ const Home = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
                             <CardActionArea>
                                 <img src="/section2-package.png" alt="packageiimg" height="140" />
                                 <CardContent>
@@ -112,7 +137,7 @@ const Home = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
                             <CardActionArea>
                                 <img src="/section3-network-3.png" alt="networkimg" height="140" />
                                 <CardContent>
@@ -134,19 +159,42 @@ const Home = () => {
                     </Grid>
                     <Grid item xs={6}>
                         <Typography variant="subtitle1" color="textSecondary">
-                            <h1 style={{ textAlign: "left", fontSize: "55px", color: "black", lineHeight: "63px" }}> Create in Decentralized Economy</h1>
-                            <p style={{ textAlign: "left", marginLeft: "30px", marginRight: "30px", marginBottom: "50px" }}>
-                                We have a master's expertise in mobile app development and helps you to get maximum ROI and boost sales.
-                            </p>
+                            <h2 style={{ textAlign: "left", fontSize: "55px", color: "black", lineHeight: "63px" }}> 500 BUSD</h2>
+                            <div style={{ textAlign: "left", marginBottom: "50px" }}>
+                            <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell align="right">Calories</TableCell>
+           
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+                            </div>
                         </Typography>
                     </Grid>
 
                 </Grid>
                 <h1 style={{ fontSize: "50px", color: "black" }}>Network Building</h1>
                 <p style={{ marginTop: "50px" }}>Get access to thousands of partners and exponential profits from infinite referrals</p>
-                <div style={{ display: "flex", marginTop: "50px" }}>
+                <div style={{ display: "flex", marginTop: "50px",  textAlign:"left" }}>
                     <Grid item xs={4}>
-                        <Card className="card" style={{ padding:"10px" }}>
+                        <Card className="card" style={{ padding:"10px", boxShadow:"none" }}>
                             <CardActionArea>
                                 <img src="/section3-network-3.png" alt="package" height="140" />
                                 <CardContent>
@@ -157,13 +205,13 @@ const Home = () => {
 
                                 </CardContent>
                             </CardActionArea>
-                            <Button variant="contained" color="primary" >
+                            <Button variant="contained" fullWidth color="primary" style={{textTransform: "capitalize", padding:"10px", backgroundColor:"#47C278", borderRadius: "12px"}}  >
                                 Active License
                             </Button>
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
-                        <Card className="card"style={{ padding:"10px" }}>
+                        <Card className="card"style={{ padding:"10px", boxShadow:"none"  }}>
                             <CardActionArea>
                                 <img src="/section3-network-2.png" alt="nice" height="140" />.
 
@@ -175,13 +223,13 @@ const Home = () => {
                                 <p>Ex: Earn 0,03% Daily of 2,000 BUSD</p>
                                 </CardContent>
                             </CardActionArea>
-                            <Button variant="contained" color="primary" >
+                            <Button variant="contained" fullWidth color="primary" style={{textTransform: "capitalize", padding:"10px", backgroundColor:"#47C278", borderRadius: "12px"}} >
                                 Active License
                             </Button>
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
-                        <Card className="card" style={{ padding:"10px" }}>
+                        <Card className="card" style={{ padding:"10px" , boxShadow:"none" }}>
                             <CardActionArea>
                                 <img src="/section3-network-3.png" alt="package" height="140" />
                                 <CardContent>
@@ -192,7 +240,7 @@ const Home = () => {
                                 <p>Ex: Earn 0,03% Daily of 4,000 BUSD</p>
                                 </CardContent>
                             </CardActionArea>
-                            <Button variant="contained" color="primary" >
+                            <Button variant="contained" fullWidth color="primary" style={{textTransform: "capitalize", padding:"10px", backgroundColor:"#47C278", borderRadius: "12px"}}  >
                                 Active License
                             </Button>
                         </Card>
@@ -200,8 +248,6 @@ const Home = () => {
                 </div>
             </Container>
         </div>
-
-
     )
 };
 

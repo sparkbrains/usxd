@@ -21,7 +21,7 @@ const Login = () => {
                 <div >
                 <Grid container spacing={3}>
                     <Grid item xs={6}>
-                        <Card className="card" raised={true} style={{ padding:"10px" }}>
+                        <Card className="card" raised={true} style={{ padding:"10px", borderRadius: "30px"  }}>
                             <CardActionArea>
 
                                 <h1> Login to Personad USxB</h1>
@@ -33,7 +33,7 @@ const Login = () => {
                                     style={{
                                         backgroundColor: "#47C278",
                                         color: "white", borderRadius: " 12px 12px", padding: "10px 45px",
-                                        fontSize: "16px", marginTop: "60px"
+                                        fontSize: "16px", marginTop: "60px",textTransform: "capitalize"
                                     }}
 
                                     type="submit"
@@ -62,7 +62,7 @@ const Login = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={6}>
-                        <Card className="card" raised={true} style={{ padding:"10px" }}>
+                        <Card className="card" raised={true} style={{ padding:"17px", borderRadius: "30px"  }}>
                             <CardActionArea>
 
                                 <CardContent>
@@ -83,7 +83,7 @@ const Login = () => {
                                     style={{
                                        
                                         color: "black", borderRadius: " 12px 12px", padding: "10px 95px",
-                                        fontSize: "16px", marginTop: "17px"
+                                        fontSize: "16px", textTransform: "capitalize"
                                     }}
 
                                     type="submit"

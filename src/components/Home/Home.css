@@ -18,3 +18,10 @@ background-color:rgb(246, 250, 250);
     color: rgba(0, 0, 0, 0.54);
     padding: 75px;
 }
+.MuiCard-root {
+    overflow: hidden;
+    height: 100% !important;
+}
+.MuiPaper-elevation1{
+    box-shadow: none !important;
+}
