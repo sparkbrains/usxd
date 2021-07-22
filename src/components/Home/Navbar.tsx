@@ -176,10 +176,10 @@ export default function PrimarySearchAppBar() {
                     <Switch>
                         <Route path="/Home1">
                             <Home />
-                            <Footer/>
+                            <Footer />
                         </Route>
                         <Route path="/Login">
-<Login/>
+                            <Login />
                         </Route>
                     </Switch>
                 </Paper>

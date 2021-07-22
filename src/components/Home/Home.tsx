@@ -145,54 +145,54 @@ const Home = () => {
                 <p style={{ marginTop: "50px" }}>Get access to thousands of partners and exponential profits from infinite referrals</p>
                 <div style={{ display: "flex", marginTop: "50px" }}>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card" style={{ padding:"10px" }}>
                             <CardActionArea>
                                 <img src="/section3-network-3.png" alt="package" height="140" />
                                 <CardContent>
+                                    <h4>Network License </h4>
+                                    <h1> 300 BUSD</h1>
+                                <p> Make aprafit with two Network layers</p>
+                                <p>Ex: Earn 0,03% Daily of 1,000 BUSD</p>
 
-                                    <Typography component="p">
-                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                        across all continents except Antarctica
-                                    </Typography>
                                 </CardContent>
                             </CardActionArea>
                             <Button variant="contained" color="primary" >
-                                Custom CSS
+                                Active License
                             </Button>
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card"style={{ padding:"10px" }}>
                             <CardActionArea>
-                            <img src="/section3-network-2.png" alt="nice" height="140"/>.
-                                
+                                <img src="/section3-network-2.png" alt="nice" height="140" />.
+
                                 <CardContent>
 
-                                    <Typography component="p">
-                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                        across all continents except Antarctica
-                                    </Typography>
+                                <h4>Growth Hacking License </h4>
+                                <h1> 1,200 BUSD</h1>
+                                <p> Make aprafit with four Network layers</p>
+                                <p>Ex: Earn 0,03% Daily of 2,000 BUSD</p>
                                 </CardContent>
                             </CardActionArea>
                             <Button variant="contained" color="primary" >
-                                Custom CSS
+                                Active License
                             </Button>
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
-                        <Card className="card">
+                        <Card className="card" style={{ padding:"10px" }}>
                             <CardActionArea>
                                 <img src="/section3-network-3.png" alt="package" height="140" />
                                 <CardContent>
 
-                                    <Typography component="p">
-                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                        across all continents except Antarctica
-                                    </Typography>
+                                <h4>Leadership License </h4>
+                                <h1> 3,500 BUSD</h1>
+                                <p> Make aprafit with eight Network layers</p>
+                                <p>Ex: Earn 0,03% Daily of 4,000 BUSD</p>
                                 </CardContent>
                             </CardActionArea>
                             <Button variant="contained" color="primary" >
-                                Custom CSS
+                                Active License
                             </Button>
                         </Card>
                     </Grid>
