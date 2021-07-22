@@ -1,192 +1,91 @@
-import * as React from 'react';
+import React from 'react';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import Paper from '@material-ui/core/Paper';
-import "./Home.css";
+import Grid from '@material-ui/core/Grid';
+import { Link, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Link, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import PermIdentityIcon from '@material-ui/icons/PermIdentity';
-import Home from './Home';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
+import Home from '../Home/Home';
+import './Navbar.css'
 
-export default function PrimarySearchAppBar() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }),
+);
 
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+export default function ButtonAppBar() {
+  const classes = useStyles();
 
-    const handleMobileMenuClose = () => {
-        setMobileMoreAnchorEl(null);
-    };
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
-    };
-
-
-    const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-        <Menu
-            style={{ top: "50px" }}
-
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            <MenuItem onClick={handleMenuClose}><PermIdentityIcon /> My Profile</MenuItem>
-
-        </Menu>
-    );
-
-    const mobileMenuId = 'primary-search-account-menu-mobile';
-    const renderMobileMenu = (
-        <Menu
-            anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            id={mobileMenuId}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            open={isMobileMenuOpen}
-            onClose={handleMobileMenuClose}
-        >
-
-            <MenuItem >
-                <IconButton
-                    aria-label="account of current user"
-                    // aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
-                    color="inherit"
-                >
-                    <AccountCircle />
-                </IconButton>
-                <p>Profile</p>
-            </MenuItem>
-        </Menu>
-    );
-
-    return (
-        <Router>
-            <div>
-                <Paper square>
-                    <Box  >
-                        <AppBar position="static"  >
-                            <div className="align">
-                                <Toolbar>
-                                    <div className="left">
-
-
-                                        <Link className="id" to="/home1"
-                                        >
-                                            <ListItem button key={'Home1'}>
-
-                                                <ListItemText primary={'What is USxD?'} style={{ color: "#122a4d", fontSize: "20px" }} />
-
-                                            </ListItem >
-                                        </Link>
-
-
-                                        <Link className="id" to="/Memberships"
-                                        >
-                                            <ListItem button key={'Memberships'}>
-                                                <ListItemText primary={'Features of USxD'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                                            </ListItem>
-                                        </Link>
-
-
-                                        <Link className="id" to="/Activity"
-                                        >
-                                            <ListItem button key={'Activity'}>
-                                                <ListItemText primary={'Coining Package'} style={{ color: "#122a4d" }} />
-                                            </ListItem>
-                                        </Link>
-
-                                        <Link className="id" to="/Login"
-                                        >
-                                            <ListItem button key={' Engage'}>
-                                                <ListItemText primary={'Network Building'} style={{ color: "#122a4d" }} />
-                                            </ListItem>
-                                        </Link>
-                                        <Link className="id" to="/Test"
-                                        >
-                                            <ListItem button key={' Engage'}>
-                                                <ListItemText primary={'Launch App'} style={{ backgroundColor: "#267326", color: "black" }} />
-                                            </ListItem>
-                                        </Link>
-
-
-                                    </div>
-
-
-                                    <Box sx={{ flexGrow: 1 }} />
-                                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                        <IconButton
-                                            edge="end"
-                                            aria-label="account of current user"
-                                            aria-controls={menuId}
-                                            aria-haspopup="true"
-
-
-                                        >
-                                            <AccountCircle />
-                                        </IconButton>
-                                    </Box>
-                                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                                        <IconButton
-                                            aria-label="show more"
-                                            aria-controls={mobileMenuId}
-                                            aria-haspopup="true"
-
-                                            color="inherit"
-                                        >
-                                            <MoreIcon />
-                                        </IconButton>
-                                    </Box>
-                                </Toolbar>
-
-                            </div>
-                        </AppBar>
-                        {renderMobileMenu}
-                        {renderMenu}
-                    </Box>
-                    <Switch>
-                        <Route path="/Home1">
+  return (
+      <Router>
+    <div className={classes.root}>
+      <div className="typo">
+      <AppBar position="static" style={{backgroundColor: "#ffffff", color:"black"}}>
+        <Toolbar>
+            <Grid lg={4}> 
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <img src="/logo.png" alt="logo"/>
+          </IconButton>
+          </Grid>
+          <Typography  className={classes.title} style={{fontSize:"14px"}}>
+          <Link className="id" to="/Home"><ListItem button key={'Home'}><ListItemText primary={'What is USxD?'} style={{ color: "#122a4d", fontSize: "20px" }} /></ListItem >
+          </Link>
+          </Typography>
+          
+          <Typography  className={classes.title} style={{fontSize:"14px"}}>
+          <Link className="id" to="/Memberships">
+            <ListItem button key={'Memberships'}>
+                <ListItemText primary={'Features of USxD'} style={{ color: "#122a4d", textDecoration: "nome" }} />
+            </ListItem>
+          </Link>
+          </Typography>
+          <Typography  className={classes.title} style={{fontSize:"14px"}}>
+          <Link className="id" to="/Activity">
+            <ListItem button key={'Activity'}>
+                <ListItemText primary={'Coining Package'} style={{ color: "#122a4d" }} />
+            </ListItem>
+        </Link>
+          </Typography>
+          <Typography  className={classes.title} style={{fontSize:"14px"}}>
+          <Link className="id" to="/Login">
+            <ListItem button key={' Engage'}>
+                <ListItemText primary={'Network Building'} style={{ color: "#122a4d" }} />
+            </ListItem>
+        </Link>
+          </Typography>
+          <Button variant="contained"  color="primary" style={{backgroundColor: "#47C278", borderRadius: "12px"}}>Launch App</Button>
+          <Button  className={classes.menuButton}  style={{paddingLeft:"10px"}}>
+            <img src="/Vector.png"  style={{backgroundColor:"blue", padding:"1px", borderRadius:"9px"}}/>
+          </Button>
+          
+        </Toolbar>
+      </AppBar>
+      </div>
+    </div>
+    <Switch>
+                        <Route path="/Home">
                             <Home />
                             <Footer/>
                         </Route>
                         <Route path="/Login">
-<Login/>
+                        <Login/>
                         </Route>
                     </Switch>
-                </Paper>
-
-            </div>
-        </Router>
-    );
-
-
-};
+    </Router>
+  );
+}
