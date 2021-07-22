@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <div style={{ backgroundColor: "#29313C", color: "#ffff", paddingTop: "90px", paddingBottom: "90px"}}>
+      <div style={{ backgroundColor: "#29313C", color: "#ffff", paddingTop: "90px", paddingBottom: "90px" , marginTop:"40px"}}>
       <Container maxWidth="xl">
         <div style={{ display: "flex"}} className="footer">
         <Grid item xs={6} sm={12}>

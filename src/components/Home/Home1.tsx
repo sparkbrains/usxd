@@ -5,9 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { useEffect } from 'react'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button';
 
 const Home = () => {
@@ -33,7 +31,7 @@ const Home = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={6}>
-                        <img src="/section1-currency.png" width="100%" />
+                        <img src="/section1-currency.png" alt="currencyimg" width="100%" />
                     </Grid>
                 </Grid>
                 <h1 style={{ fontSize: "55px", color: "black" }}> Features of Dexconomy Platform and USxd Stablecoin</h1>
@@ -41,7 +39,7 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section2-currency.png" height="140" />
+                                <img src="/section2-currency.png" alt="currencyimg" height="140" />
                                 <CardContent>
 
                                     <Typography component="p">
@@ -57,7 +55,7 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section2-global.png" height="140" />
+                                <img src="/section2-global.png" alt="globalimg" height="140" />
                                 <CardContent>
 
                                     <Typography component="p">
@@ -71,7 +69,7 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section2-nfc.png" height="140" />
+                                <img src="/section2-nfc.png" alt="nfcimg" height="140" />
                                 <CardContent>
 
                                     <Typography component="p">
@@ -87,7 +85,7 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section2-wallet.png" height="140" />
+                                <img src="/section2-wallet.png" alt="walletimg" height="140" />
                                 <CardContent>
 
                                     <Typography component="p">
@@ -101,7 +99,7 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section2-package.png" height="140" />
+                                <img src="/section2-package.png" alt="packageiimg" height="140" />
                                 <CardContent>
 
                                     <Typography component="p">
@@ -115,7 +113,7 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section3-network-3.png" height="140" />
+                                <img src="/section3-network-3.png" alt="networkimg" height="140" />
                                 <CardContent>
 
                                     <Typography component="p">
@@ -131,7 +129,7 @@ const Home = () => {
                 <h1 style={{ fontSize: "50px", color: "black" }}>Coining Package</h1>
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
-                        <img src="/section2-package.png" width="100%" />
+                        <img src="/section2-package.png" alt="packageimg" width="100%" />
                     </Grid>
                     <Grid item xs={6}>
                         <Typography variant="subtitle1" color="textSecondary">
@@ -149,7 +147,7 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section3-network-3.png" height="140" />
+                                <img src="/section3-network-3.png" alt="package" height="140" />
                                 <CardContent>
 
                                     <Typography component="p">
@@ -166,7 +164,8 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section3-network-2.png" height="140" />
+                            <img src="/section3-network-2.png" alt="nice" height="140"/>.
+                                
                                 <CardContent>
 
                                     <Typography component="p">
@@ -183,7 +182,7 @@ const Home = () => {
                     <Grid item xs={4}>
                         <Card className="card">
                             <CardActionArea>
-                                <img src="/section3-network-3.png" height="140" />
+                                <img src="/section3-network-3.png" alt="package" height="140" />
                                 <CardContent>
 
                                     <Typography component="p">
