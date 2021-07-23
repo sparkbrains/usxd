@@ -6,13 +6,14 @@ import Link from '@material-ui/core/Link';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import { ArrowUpward, SupervisorAccount, Twitter, Facebook, Telegram, YouTube } from '@material-ui/icons';
+import { ArrowUpward, SupervisorAccount, Twitter, Facebook, Telegram, YouTube,CheckCircleOutline } from '@material-ui/icons';
 
 
-const RegisterStep3Activation = () => {
+
+const RegisterStep3Activationdone = () => {
 
     useEffect(() => {
-        document.title = "RegisterStep3Activation"
+        document.title = "RegisterStep3Activationdone"
     }, [])
 
 
@@ -74,7 +75,9 @@ const RegisterStep3Activation = () => {
                                 <CardActionArea>
 
                                     <CardContent style={{ textAlign: "left" }}>
-                                        <h1>Goes activation</h1>
+                                        <h1 style={{ display: "inlineFlex" }}>Goes activation
+                                        <CheckCircleOutline style={{ color: "#5DD591",paddingRight: "10px", verticalAlign: "middle",fontSize: "40px",padding:"10px"}}/>
+                                        </h1>
                                         <p>
                                             Wait for your account to be activated. You can login to your personal account
                                             after confirming the transaction in the blockchain by clicking on the login button
@@ -86,7 +89,7 @@ const RegisterStep3Activation = () => {
                                     style={{
 
                                         borderRadius: " 12px 12px", padding: "10px 95px",
-                                        fontSize: "16px", marginTop: "10px", textTransform: "capitalize", backgroundColor: "#DBDFE6"
+                                        fontSize: "16px", marginTop: "10px", textTransform: "capitalize", backgroundColor: "#47C278"
                                     }}
 
                                     variant="contained"
@@ -110,4 +113,4 @@ const RegisterStep3Activation = () => {
     )
 };
 
-export default RegisterStep3Activation
+export default RegisterStep3Activationdone

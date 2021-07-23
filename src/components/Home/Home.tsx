@@ -7,31 +7,34 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Divider from '@material-ui/core/Divider';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 
-const useStyles = makeStyles({
-    table: {
-      minWidth: 650,
+
+
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(12, 1fr)',
+      gridGap: theme.spacing(3),
     },
-  });
-  function createData(name: string, calories: number, fat: number, carbs: number, protein: number) {
-    return { name, calories, fat, carbs, protein };
-  }
-  const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-  ];
+    paper: {
+      padding: theme.spacing(1),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+      whiteSpace: 'nowrap',
+      marginBottom: theme.spacing(1),
+    },
+    divider: {
+      margin: theme.spacing(2, 0),
+    },
+  }),
+);
+
 
 const Home = () => {
     const classes = useStyles();
@@ -42,8 +45,10 @@ const Home = () => {
 
 
     return (
-        <div>
-            <Container>
+        
+
+          <div className="section1">
+            <Container >
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
                         <Typography variant="subtitle1" color="textSecondary">
@@ -60,7 +65,9 @@ const Home = () => {
                         <img src="/section1-currency.png" alt="currencyimg" width="100%" />
                     </Grid>
                 </Grid>
-                <h1 style={{ fontSize: "55px", color: "black" }}> Features of Dexconomy Platform and USxd Stablecoin</h1>
+                <h1 style={{ fontSize: "55px", color: "black",padding:"40px"}}> Features of Dexconomy Platform and USxd Stablecoin</h1>
+
+                       
                 <div style={{ display: "flex", marginTop: "30px", }}>
                     <Grid item xs={4}>
                         <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
@@ -158,35 +165,59 @@ const Home = () => {
                         <img src="/section2-package.png" alt="packageimg" width="100%" />
                     </Grid>
                     <Grid item xs={6}>
+                    <Paper style={{borderRadius:"20px"}}>
                         <Typography variant="subtitle1" color="textSecondary">
-                            <h2 style={{ textAlign: "left", fontSize: "55px", color: "black", lineHeight: "63px" }}> 500 BUSD</h2>
-                            <div style={{ textAlign: "left", marginBottom: "50px" }}>
-                            <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-           
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+                            
+                            <div style={{padding:"20px"}}>
+                                <Typography variant="subtitle1" gutterBottom>
+                                    <h2 style={{ textAlign: "left", fontSize: "40px", color: "black", lineHeight: "0px" }}> 500 BUSD<span style={{fontSize:"20px"}}>/Pakage</span></h2>
+                                </Typography>
+                                <Grid container spacing={3}>
+                                    
+                                    <Grid item xs={6}>
+                                    <Paper style={{boxShadow:"none", textAlign:"left"}} className={classes.paper}>Daily Profit (APY)</Paper>
+                                    <Paper style={{boxShadow:"none", textAlign:"left"}} className={classes.paper}>Duration</Paper>
+                                    <Paper style={{boxShadow:"none", textAlign:"left"}} className={classes.paper}>Claim Lockup</Paper>
+                                        
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                        <Box fontWeight="fontWeightBold" fontSize="h6.fontSize" m={1}>
+                                            <Paper  style={{boxShadow:"none"}} className={classes.paper}>0,25%</Paper>
+                                            <Paper style={{boxShadow:"none",color:"#47C278",borderRadius:"50px 50px",border:" 2px solid #47C278", margin:"0px 47px", fontSize:"15px"}} className={classes.paper}>30 days</Paper>
+                                            <Paper style={{boxShadow:"none"}} className={classes.paper}>48 Hour(s)</Paper>
+                                        </Box>
+                                    
+                                    </Grid>
+                                    
+                                </Grid>
+                                <Divider className={classes.divider} />
+                                <Grid container spacing={3}>
+                                    
+                                    <Grid item xs={6}>
+                                    <Paper style={{boxShadow:"none", textAlign:"left"}} className={classes.paper}>Earned</Paper>
+                                    <Paper style={{boxShadow:"none", textAlign:"left"}} className={classes.paper}>--USxD</Paper>
+                                    
+                                        
+                                    </Grid>
+                                    <Grid item xs={6}  style={{borderRadius:"50px 50px",border:" 2px solid #DBDFE6"}}>
+                                    
+                                        <Grid item xs={3}>
+                                        <Paper style={{boxShadow:"none"}} className={classes.paper}>Quantity to purchase</Paper>
+                                        <Paper  style={{boxShadow:"none"}} className={classes.paper}>2</Paper>
+                                    
+                                        </Grid>
+
+                                        
+                                    </Grid>
+                                    
+                                </Grid>
+                                <Button variant="contained" color="primary" style={{padding:"16px", marginTop:"20px", width:"100%",
+                                 borderRadius:"12px", backgroundColor:"#47C278", fontSize:"16px",lineHeight:"24px"}}>Authorize BUSD</Button>
+                                
+                                
                             </div>
-                        </Typography>
+                            </Typography>
+                        </Paper>    
                     </Grid>
 
                 </Grid>

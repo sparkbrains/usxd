@@ -20,7 +20,14 @@ import RegisterStep3 from '../Register/RegisterStep3'
 import RegisterStep3Loading from '../Register/RegisterStep3Loading' 
 import RegisterStep3Check from '../Register/RegisterStep3Check' 
 import RegisterStep3Activation from '../Register/RegisterStep3Activation'
+import Registerstep2dropdown from '../Register/Registerstep2dropdown';
 import './Navbar.css'
+import RegisterStep3Activationdone from '../Register/RegisterStep3Activationdone';
+import Swap from '../Swap/Swap';
+import LoginConnectWallet from '../Login/LoginConnectWallet';
+import RegisterConnectWallet from '../Register/RegisterConnectWallet';
+import RegisterConnectWalletagree from '../Register/RegisterConnectWalletagree';
+import SelectToken  from '../Swap/SelectToken';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -117,6 +124,30 @@ export default function ButtonAppBar() {
                 <Route path="/RegisterStep3Activation">
                     <RegisterStep3Activation />
                 </Route>
+
+                <Route path="/Registerstep2dropdown">
+                    <Registerstep2dropdown />
+                </Route>
+                <Route path="/RegisterStep3Activationdone">
+                    <RegisterStep3Activationdone />
+                </Route>
+                <Route path="/Swap">
+                    <Swap />
+                </Route>
+                <Route path="/LoginConnectWallet">
+                    <LoginConnectWallet />
+                </Route>
+                <Route path="/RegisterConnectWallet">
+                    <RegisterConnectWallet />
+                </Route>
+                <Route path="/RegisterConnectWalletagree">
+                    <RegisterConnectWalletagree />
+                </Route>
+                <Route path="/SelectToken">
+                    <SelectToken />
+                </Route>
+                
+                
 
                 
                 

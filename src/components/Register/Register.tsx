@@ -1,19 +1,80 @@
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { useEffect } from 'react'
+import React from "react";
 import Card from '@material-ui/core/Card';
 import Link from '@material-ui/core/Link';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import Stepper from '@material-ui/core/Stepper';
+import Step from '@material-ui/core/Step';
+import StepLabel from '@material-ui/core/StepLabel';
+import Typography from '@material-ui/core/Typography';
+import { ErrorOutlineRounded } from '@material-ui/icons';
 
-const Register= () => {
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            width: '100%',
+        },
+        button: {
+            marginRight: theme.spacing(1),
+        },
+        instructions: {
+            marginTop: theme.spacing(1),
+            marginBottom: theme.spacing(1),
+        },
+    }),
+);
+
+function getSteps() {
+    return ['Step1', 'Step2', 'Step3'];
+}
+
+function getStepContent(step: number) {
+    switch (step) {
+        case 0:
+            return 'Step1';
+        case 1:
+            return 'Step2';
+        case 2:
+            return 'Step3';
+        default:
+            return 'Unknown step';
+    }
+}
+
+const Register = () => {
 
     useEffect(() => {
         document.title = "Register"
     }, [])
+    const classes = useStyles();
+    const [activeStep, setActiveStep] = React.useState(0);
+    const [skipped, setSkipped] = React.useState(new Set<number>());
+    const steps = getSteps();
 
+    const isStepOptional = (step: number) => {
+        return step === 1;
+    };
 
+    const isStepSkipped = (step: number) => {
+        return skipped.has(step);
+    };
+
+    const handleNext = () => {
+        let newSkipped = skipped;
+        if (isStepSkipped(activeStep)) {
+            newSkipped = new Set(newSkipped.values());
+            newSkipped.delete(activeStep);
+        }
+
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setSkipped(newSkipped);
+    };
 
     return (
         <div>
@@ -53,7 +114,7 @@ const Register= () => {
                                     </Button>
                                 </Grid>
                                 <Grid container className="link">
-                                    <Grid item container justify="center" style={{ marginTop: "20px",color:"#191D24"}}>
+                                    <Grid item container justify="center" style={{ marginTop: "20px", color: "#191D24" }}>
 
 
                                         <Link href="" variant="body2">
@@ -66,36 +127,74 @@ const Register= () => {
                             </Card>
                         </Grid>
                         <Grid item xs={6}>
-                            <Card className="card" raised={true} style={{ padding: "17px", borderRadius: "30px" }}>
-                                <CardActionArea>
+                            <div className={classes.root}>
+                                <Stepper activeStep={activeStep}>
+                                    {steps.map((label, index) => {
+                                        const stepProps: { completed?: boolean } = {};
+                                        const labelProps: { optional?: React.ReactNode } = {};
+                                        if (isStepOptional(index)) {
+                                            labelProps.optional = <Typography variant="caption"></Typography>;
+                                        }
+                                        if (isStepSkipped(index)) {
+                                            stepProps.completed = false;
+                                        }
+                                        return (
+                                            <Step key={label} {...stepProps}>
+                                                <StepLabel {...labelProps}>{label}</StepLabel>
+                                            </Step>
+                                        );
+                                    })}
+                                </Stepper>
+                                <div>
+                                    {activeStep === steps.length ? (
+                                        <div>
 
-                                    <CardContent>
-                                        <h1> Wallet connection</h1>
-                                        <p>Confirmation of the BUSD token to interact with the USxD contract. At this step,
-                                            you do not spen BUSD yet, but only give permission that BUSD form your wallet can be spent on the contract</p>
-                                            <p>
-                                            Make sure you choose the correct wallet for futher work with the platform
-                                            </p>
 
-                                    </CardContent>
-                                </CardActionArea>
-                               
-                                   
+                                        </div>
+                                    ) : (
+                                        <div>
+                                            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
 
-                                <Button
-                                    style={{
+                                        </div>
+                                    )}
 
-                                        color: "#FFFFFF", borderRadius: " 12px 12px", padding: "10px 95px",
-                                        fontSize: "16px", marginTop: "10px", textTransform: "capitalize",backgroundColor:"#47C278"
-                                    }}
+                                    <Card className="card" raised={true} style={{ padding: "17px", borderRadius: "30px" }}>
+                                        <CardActionArea>
 
-                                    type="submit"
-                                    fullWidth
-                                    variant="outlined"
-                                    size="medium" color="primary">
-                                    Connect a Wallet
-                                </Button>
-                            </Card>
+                                            <CardContent>
+                                                <h1> Wallet connection</h1>
+                                                <p>Confirmation of the BUSD token to interact with the USxD contract. At this step,
+                                                    you do not spen BUSD yet, but only give permission that BUSD form your wallet can be spent on the contract
+                                                </p>
+
+                                                <p style={{ display: "inlineFlex" }}>
+                                                    <ErrorOutlineRounded style={{ paddingRight: "10px",verticalAlign: "middle" }} />
+                                                    Make sure you choose the correct wallet for futher work with the platform
+                                                </p>
+
+
+                                            </CardContent>
+                                        </CardActionArea>
+                                        <Button
+                                            style={{
+
+                                                color: "#FFFFFF", borderRadius: " 12px 12px", padding: "10px 95px",
+                                                fontSize: "16px", marginTop: "10px", textTransform: "capitalize", backgroundColor: "#47C278"
+                                            }}
+                                            variant="contained"
+                                            color="primary"
+                                            onClick={handleNext}
+                                            className={classes.button}
+                                            type="submit"
+                                            fullWidth
+                                            size="medium" >
+                                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                            Connect a Wallet
+                                        </Button>
+
+                                    </Card>
+                                </div>
+                            </div>
                         </Grid>
                     </Grid>
                 </div>

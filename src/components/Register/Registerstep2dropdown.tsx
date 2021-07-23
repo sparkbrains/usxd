@@ -8,7 +8,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
-import TextField from '@material-ui/core/TextField';
 import { ErrorOutlineRounded } from '@material-ui/icons';
 import React from "react";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
@@ -16,7 +15,6 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Typography from '@material-ui/core/Typography';
-import {CheckCircleOutline} from '@material-ui/icons'
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -50,10 +48,10 @@ function getStepContent(step: number) {
             return 'Unknown step';
     }
 }
-const RegisterstepCheck = () => {
+const Registerstep2dropdown = () => {
 
     useEffect(() => {
-        document.title = "RegisterstepCheck"
+        document.title = "Registerstep2dropdown"
     }, [])
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
@@ -166,10 +164,7 @@ const RegisterstepCheck = () => {
                                         <CardActionArea>
 
                                             <CardContent>
-                                                <h1 style={{ display: "inlineFlex" }}>
-                                                     BUSD authorization
-                                                     <CheckCircleOutline style={{ color: "#5DD591",paddingRight: "10px", verticalAlign: "middle",fontSize: "40px",padding:"10px"}}/>
-                                                     </h1>
+                                                <h1> BUSD authorization</h1>
                                                 <p>Confirmation of the BUSD token to interact with the USxD contract. At this step,
                                                     you do not spen BUSD yet, but only give permission that BUSD form your wallet can be spent on the contract
                                                 </p>
@@ -195,15 +190,14 @@ const RegisterstepCheck = () => {
                                             <MenuItem value={20}>Then, convert a pixel value to em</MenuItem>
                                             <MenuItem value={30}>convert an em value to pixels</MenuItem>
                                         </Select>
-                                        <TextField
-                                            margin="normal"
-                                            variant="outlined"
-                                            label="ID Wallet address"
-                                            required
-                                            fullWidth
-                                            name="name"
-                                            autoComplete="name"
-                                        />
+                                        
+                                          
+                                           
+                                            
+                                        <p style={{ color:"#47C278" }}>Register with 100 BUSD by ID address</p>
+                                            
+                                        
+                                        <p>Register with 200 BUSD</p>
 
                                         <Button
                                             style={{
@@ -235,4 +229,4 @@ const RegisterstepCheck = () => {
     )
 };
 
-export default RegisterstepCheck
+export default Registerstep2dropdown
