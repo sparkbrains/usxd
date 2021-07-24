@@ -1,159 +1,125 @@
-import React from 'react'
-import './Swap.css'
-import {
-    LineStyle,
-    MonetizationOn, SupervisedUserCircleSharp,
-} from '@material-ui/icons'
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Menu, { MenuProps } from '@material-ui/core/Menu';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import Divider from '@material-ui/core/Divider';
+import { createStyles, Theme } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+import Select from '@material-ui/core/Select';
 
-const StyledMenu = withStyles({
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(12, 1fr)',
+      gridGap: theme.spacing(3),
+    },
     paper: {
-        border: '1px solid #d3d4d5',
+      padding: theme.spacing(1),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+      whiteSpace: 'nowrap',
+      marginBottom: theme.spacing(1),
     },
-})((props: MenuProps) => (
-    <Menu
-        elevation={0}
-        getContentAnchorEl={null}
-        anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-        }}
-        transformOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
-        }}
-        {...props}
-    />
-));
-const StyledMenuItem = withStyles((theme) => ({
-    root: {
-        '&:focus': {
-           
-            '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-               
-            },
-        },
+    divider: {
+      margin: theme.spacing(2, 0),
     },
-}))(MenuItem);
-
-export default function Sidebar() {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    return (
-        <div className="Sidebar">
-            <div className="sidebarWrapper">
-                <div className="sidebarmenu">
-
-                    <ul className="sidebarList">
-                        <li className="sidebarListItem active">
-                            < LineStyle className="sidebarIcon" />
-                            Dashboard
-                        </li>
+  }),
+);
 
 
+export default function OutlinedCard() {
+  const classes = useStyles();
 
-                    </ul>
-                    <div style={{textAlign: "left" ,backgroundColor:"white"}}>
-                        <Button
-                            aria-controls="customized-menu"
-                            aria-haspopup="true"
-                            onClick={handleClick}
-                        >
-                           Exchange
-                        </Button>
-                        <StyledMenu
-                            id="customized-menu"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            <StyledMenuItem>
-                                <ListItemIcon>
-                                    <SendIcon fontSize="small" />
-                                </ListItemIcon>
-                                <ListItemText primary="On PancakeSwap" />
-                            </StyledMenuItem>
-                            <StyledMenuItem>
-                                <ListItemIcon>
-                                    <DraftsIcon fontSize="small" />
-                                </ListItemIcon>
-                                <ListItemText primary="Swap" />
-                            </StyledMenuItem>
-                        </StyledMenu>
-                    </div>
 
-                </div>
-                
-                <div className="sidebarmenu">
-                    <ul className="sidebarList">
+  return (
+    <Container >
+      <Grid container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: '100vh' }}>
 
-                        <li className="sidebarListItem">
-                            < SupervisedUserCircleSharp className="sidebarIcon" />
-                            Network building
-                        </li>
-                    </ul>
+        <Grid item xs={7}>
+          <Paper style={{ borderRadius: "20px" }}>
+            <Typography variant="subtitle1" color="textSecondary">
 
-                </div>
-                <div className="sidebarmenu">
-                    <ul className="sidebarList">
+              <div style={{ padding: "20px" }}>
+                <Typography variant="subtitle1" gutterBottom>
+                  <h2 style={{ textAlign: "left", fontSize: "40px", color: "black", lineHeight: "0px" }}> Swap<span style={{ fontSize: "20px" }}>/Pakage</span></h2>
+                </Typography>
+                <Grid container spacing={3}>
 
-                        <li className="sidebarListItem">
-                            < MonetizationOn className="sidebarIcon" />
-                            Coining package
-                        </li>
-                    </ul>
+                  <Grid item xs={6}>
+                    <Paper style={{ boxShadow: "none", textAlign: "left" }} className={classes.paper}>From</Paper>
+                    <Paper style={{ boxShadow: "none", textAlign: "left" }} className={classes.paper}>Duration</Paper>
+                    <Paper style={{ boxShadow: "none", textAlign: "left" }} className={classes.paper}>Claim Lockup</Paper>
 
-                </div>
-                <div className="sidebarmenu">
-                   
-                    <div style={{textAlign: "left" ,backgroundColor:"white"}}>
-                        <Button
-                            aria-controls="customized-menu"
-                            aria-haspopup="true"
-                            onClick={handleClick}
-                        >
-                            More Infomation
-                        </Button>
-                        <StyledMenu
-                            id="customized-menu"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            <StyledMenuItem>
-                                <ListItemIcon>
-                                    <SendIcon fontSize="small" />
-                                </ListItemIcon>
-                                <ListItemText primary="Audit" />
-                            </StyledMenuItem>
-                            <StyledMenuItem>
-                                <ListItemIcon>
-                                    <DraftsIcon fontSize="small" />
-                                </ListItemIcon>
-                                <ListItemText primary=" Document" />
-                            </StyledMenuItem>
-                        </StyledMenu>
-                    </div>
+                  </Grid>
+                  <Select
+                    fullWidth
+                    labelId="demo-controlled-open-select-label"
+                    id="demo-controlled-open-select"
+                    variant="outlined"
+                    style={{ borderRadius: "17px" }}
 
-                </div>
-            </div>
-        </div >
-    )
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={10}>Register with 100 BUSD by ID address </MenuItem>
+                    <MenuItem value={20}>Then, convert a pixel value to em</MenuItem>
+                    <MenuItem value={30}>convert an em value to pixels</MenuItem>
+                  </Select>
+                  <Grid item xs={6}>
+                    <Box fontWeight="fontWeightBold" fontSize="h6.fontSize" m={1}>
+                      <Paper style={{ boxShadow: "none" }} className={classes.paper}>0,25%</Paper>
+                      <Paper style={{ boxShadow: "none", color: "#47C278", borderRadius: "50px 50px", border: " 2px solid #47C278", margin: "0px 47px", fontSize: "15px" }} className={classes.paper}>30 days</Paper>
+                      <Paper style={{ boxShadow: "none" }} className={classes.paper}>48 Hour(s)</Paper>
+                    </Box>
+
+                  </Grid>
+
+                </Grid>
+                <Divider className={classes.divider} />
+                <Grid container spacing={3}>
+
+                  <Grid item xs={6}>
+                    <Paper style={{ boxShadow: "none", textAlign: "left" }} className={classes.paper}>Earned</Paper>
+                    <Paper style={{ boxShadow: "none", textAlign: "left" }} className={classes.paper}>--USxD</Paper>
+
+
+                  </Grid>
+                  <Grid item xs={6} style={{ borderRadius: "50px 50px", border: " 2px solid #DBDFE6" }}>
+
+                    <Grid item xs={3}>
+                      <Paper style={{ boxShadow: "none" }} className={classes.paper}>Quantity to purchase</Paper>
+                      <Paper style={{ boxShadow: "none" }} className={classes.paper}>2</Paper>
+
+                    </Grid>
+
+
+                  </Grid>
+
+                </Grid>
+                <Button variant="contained" color="primary" style={{
+                  padding: "16px", marginTop: "20px", width: "100%",
+                  borderRadius: "12px", backgroundColor: "#47C278", fontSize: "16px", lineHeight: "24px"
+                }}>Authorize BUSD</Button>
+
+
+              </div>
+            </Typography>
+          </Paper>
+        </Grid>
+
+
+      </Grid>
+    </Container>
+  );
 }

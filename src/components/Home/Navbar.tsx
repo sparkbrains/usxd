@@ -28,6 +28,8 @@ import LoginConnectWallet from '../Login/LoginConnectWallet';
 import RegisterConnectWallet from '../Register/RegisterConnectWallet';
 import RegisterConnectWalletagree from '../Register/RegisterConnectWalletagree';
 import SelectToken  from '../Swap/SelectToken';
+import Swap1  from '../Swap/Swap1';
+import SwapSetting  from '../Swap/SwapSetting';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -145,6 +147,12 @@ export default function ButtonAppBar() {
                 </Route>
                 <Route path="/SelectToken">
                     <SelectToken />
+                </Route>
+                <Route path="/Swap1">
+                    <Swap1 />
+                </Route>
+                <Route path="/SwapSetting">
+                    <SwapSetting />
                 </Route>
                 
                 
