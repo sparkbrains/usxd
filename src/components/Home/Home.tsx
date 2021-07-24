@@ -71,7 +71,7 @@ const Home = () => {
 
                 <Container>    
                     <h1 style={{ fontSize: "55px", color: "black",padding:"140px", position:"relative"}}> Features of Dexconomy Platform and USxd Stablecoin</h1>
-                    <img src="/section1-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",top:"115%",left:"42%"}} />
+                    <img src="/section1-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",top:"115%",left:"42%", height:"0"}} />
 
                         
                     <div style={{ display: "flex", marginTop: "30px", }}>
@@ -171,7 +171,7 @@ const Home = () => {
 
             <div style={{ backgroundImage: "url()",paddingTop:"140px",backgroundRepeat: 'no-repeat' }}>
                 <Container>  
-                    <h1 style={{ fontSize: "50px", color: "black", position:"relative", }}>Coining Package</h1>
+                    <h1 style={{ fontSize: "50px", color: "black", position:"relative",marginBottom:"0" }}>Coining Package</h1>
                     <img src="/section3-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",left:"39%"}} />
                     <Grid container spacing={2}>
                         <Grid item xs={6}>
@@ -239,7 +239,8 @@ const Home = () => {
 
             <div style={{ backgroundImage: "url()",paddingTop:"100px", paddingBottom:"100px",backgroundRepeat: 'no-repeat' }}>
                 <Container>  
-                    <h1 style={{ fontSize: "50px", color: "black" }}>Network Building</h1>
+                    <h1 style={{ fontSize: "50px", color: "black", marginBottom:"0" }}>Network Building</h1>
+                    <img src="/section3-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",left:"39%"}} />
                     <p style={{ marginTop: "50px" }}>Get access to thousands of partners and exponential profits from infinite referrals</p>
                     <div style={{ display: "flex", marginTop: "50px",  textAlign:"left" }}>
                         <Grid item xs={4}>
