@@ -30,6 +30,15 @@ import RegisterConnectWalletagree from '../Register/RegisterConnectWalletagree';
 import SelectToken  from '../Swap/SelectToken';
 import Swap1  from '../Swap/Swap1';
 import SwapSetting  from '../Swap/SwapSetting';
+import Networkbuildinglicenseactive from '../Network/Networkbuildinglicenseactive';
+import Networkbuildinglicense from '../Network/Networkbuildinglicense';
+import Networkbuildinglicenseloading from '../Network/Networkbuildinglicenseloading';
+import Networkbuildingactivated from '../Network/Networkbuildingactivated';
+import Coiningpackage from '../Coining/Coiningpackage';
+import Coiningpackageloading from '../Coining/Coiningpackageloading';
+import Coiningpackageactive from '../Coining/Coiningpackageactive';
+
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -154,9 +163,32 @@ export default function ButtonAppBar() {
                 <Route path="/SwapSetting">
                     <SwapSetting />
                 </Route>
+                <Route path="/Networkbuildinglicenseactive">
+                    <Networkbuildinglicenseactive />
+                </Route>
+                <Route path="/Networkbuildinglicense">
+                    <Networkbuildinglicense />
+                </Route>
+                <Route path="/Networkbuildinglicenseloading">
+                    <Networkbuildinglicenseloading />
+                </Route>
+                <Route path="/Networkbuildingactivated">
+                    <Networkbuildingactivated />
+                </Route>
+                
+              
+                <Route path="/Coiningpackage">
+                    <Coiningpackage/>
+                </Route>
+                <Route path="/Coiningpackageloading">
+                    <Coiningpackageloading />
+                </Route>
+                <Route path="/Coiningpackageactive">
+                    <Coiningpackageactive />
+                </Route>
                 
                 
-
+            
                 
                 
                 

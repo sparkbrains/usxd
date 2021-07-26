@@ -54,7 +54,7 @@ const Home = () => {
                         <Grid item xs={6}>
                             <Typography variant="subtitle1" color="textSecondary">
                                 <h1 style={{ textAlign: "left", fontSize: "95px", color: "black", lineHeight: "104px", position:"relative"}}> Create in Decentralized Economy</h1>
-                                <img src="/section1-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",top:"439px",left:"339px"}} />
+                                <img src="/section1-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",top:"439px",left:"437px"}} />
                                 <p style={{ textAlign: "left", marginRight: "30px", marginBottom: "50px" }}>
                                     Our partners will launch later also ATM, POS, Visa and
                                     Mastercard, NFC p2p wallet, which will allow USxD to enter the
@@ -171,7 +171,7 @@ const Home = () => {
 
             <div style={{ backgroundImage: "url()",paddingTop:"140px",backgroundRepeat: 'no-repeat' }}>
                 <Container>  
-                    <h1 style={{ fontSize: "50px", color: "black", position:"relative",marginBottom:"0" }}>Coining Package</h1>
+                    <h1 style={{ fontSize: "50px", color: "black", position:"relative", }}>Coining Package</h1>
                     <img src="/section3-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",left:"39%"}} />
                     <Grid container spacing={2}>
                         <Grid item xs={6}>
@@ -239,8 +239,7 @@ const Home = () => {
 
             <div style={{ backgroundImage: "url()",paddingTop:"100px", paddingBottom:"100px",backgroundRepeat: 'no-repeat' }}>
                 <Container>  
-                    <h1 style={{ fontSize: "50px", color: "black", marginBottom:"0" }}>Network Building</h1>
-                    <img src="/section3-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",left:"39%"}} />
+                    <h1 style={{ fontSize: "50px", color: "black" }}>Network Building</h1>
                     <p style={{ marginTop: "50px" }}>Get access to thousands of partners and exponential profits from infinite referrals</p>
                     <div style={{ display: "flex", marginTop: "50px",  textAlign:"left" }}>
                         <Grid item xs={4}>
