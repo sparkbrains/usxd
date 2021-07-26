@@ -70,8 +70,8 @@ const Home = () => {
                 </Container>
 
                 <Container>    
-                    <h1 style={{ fontSize: "55px", color: "black",padding:"140px", position:"relative"}}> Features of Dexconomy Platform and USxd Stablecoin</h1>
-                    <img src="/section1-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",top:"115%",left:"42%", height:"0"}} />
+                    <h1 style={{ fontSize: "55px", color: "black",paddingTop:"70px", position:"relative"}}> Features of Dexconomy Platform and USxd Stablecoin</h1>
+                    <img src="/section1-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",top:"115%",left:"42%"}} />
 
                         
                     <div style={{ display: "flex", marginTop: "30px", }}>

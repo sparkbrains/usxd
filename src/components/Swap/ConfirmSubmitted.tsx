@@ -10,6 +10,7 @@ import TextField from '@material-ui/core/TextField';
 import React from 'react';
 import Backdrop from '@material-ui/core/Backdrop';
 import { makeStyles } from '@material-ui/styles';
+import Drawer from '@material-ui/core/Drawer';
 
 import {createStyles, Theme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
     })
 );
-const SelectToken = () => {
+const ConfirmSubmitted = () => {
     const classes = useStyles();
 
     const [open, setOpen] = React.useState(false);
@@ -161,13 +162,14 @@ const SelectToken = () => {
                                                                 <img src="./trust.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />ETH</p>
                                                             <p style={{ borderRadius: "10px", textAlign: "left" }}>
                                                                 <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />BTC</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
+
+                                                            < p style={{ borderRadius: "10px", textAlign: "left" }}>
                                                                 <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />XRP</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
+                                                            < p style={{ borderRadius: "10px", textAlign: "left" }}>
                                                                 <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />1INCH</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
+                                                            <  p style={{ borderRadius: "10px", textAlign: "left" }}>
                                                                 <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />PANCAKE</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
+                                                            < p style={{ borderRadius: "10px", textAlign: "left" }}>
                                                                 <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />BIFI</p>
 
                                                         </Grid>
@@ -185,4 +187,4 @@ const SelectToken = () => {
         </div>
     )
 };
-export default SelectToken
+export default ConfirmSubmitted

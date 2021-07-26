@@ -14,6 +14,7 @@ import Paper from '@material-ui/core/Paper';
 import {CheckBox} from '@material-ui/icons';
 import {Close} from '@material-ui/icons';
 import Typography from '@material-ui/core/Typography';
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     backdrop: {
@@ -125,46 +126,48 @@ const LoginConnectWallet = () => {
                     </Grid>
                 </Grid>
                 </div>
+
                 <div>
-                <Button variant="outlined" color="primary" onClick={handleToggle}>
-                    Show backdrop
-                </Button>
-                <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
-                    {/* <CircularProgress color="inherit" /> */}
-                    <div className={classes.root}>
-                        <Container>
-                        <Grid container spacing={3}>
-                            <Grid item xs={12}>
-                            <Paper className={classes.paper} style={{borderRadius:"35px", margin:"155px"}}>
-                            <Typography variant="h5" component="h2">
-                                <div style={{padding:"15px 60px", borderRadius:"40px"}}>
-                                    <h3 style={{textAlign:"left", fontSize:"32px",color:"black"}}>Connect a wallet  </h3>
-                                    <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"25px"}}><CheckBox style={{padding:"10px",verticalAlign:"middle", color:"#47C278"}} />I have read, understand, and agree to the Terms of Service.<Close style={{float:"right"}} /> </p>
-                                    <Grid container spacing={3}>
-                                        <Grid item xs={12} sm={6}>
-                                        <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
-                                            <img src="./dog.png" alt="dog" style={{marginRight:"20px", verticalAlign:"middle"}} />MetaMask</p>
-                                        <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
-                                        <img src="./dog.png"  alt="dog"  style={{marginRight:"20px", verticalAlign:"middle"}} />WalletConnect</p>
-                                        <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
-                                            <img src="./token.png"  alt="dog"  style={{marginRight:"20px", verticalAlign:"middle"}} />Tokenpocket Wallet</p>
+                    <Button variant="outlined" color="primary" onClick={handleToggle}>
+                        Show backdrop
+                    </Button>
+                    <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+                        {/* <CircularProgress color="inherit" /> */}
+                        <div className={classes.root}>
+                            <Container>
+                            <Grid container spacing={3}>
+                                <Grid item xs={12}>
+                                <Paper className={classes.paper} style={{borderRadius:"35px", margin:"155px"}}>
+                                <Typography variant="h5" component="h2">
+                                    <div style={{padding:"15px 60px", borderRadius:"40px"}}>
+                                        <h3 style={{textAlign:"left", fontSize:"32px",color:"black"}}>Connect a wallet  </h3>
+                                        <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"25px"}}><CheckBox style={{padding:"10px",verticalAlign:"middle", color:"#47C278"}} />I have read, understand, and agree to the Terms of Service.<Close style={{float:"right"}} /> </p>
+                                        <Grid container spacing={3}>
+                                            <Grid item xs={12} sm={6}>
+                                            <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
+                                                <img src="./dog.png" alt="dog" style={{marginRight:"20px", verticalAlign:"middle"}} />MetaMask</p>
+                                            <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
+                                            <img src="./dog.png"  alt="dog"  style={{marginRight:"20px", verticalAlign:"middle"}} />WalletConnect</p>
+                                            <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
+                                                <img src="./token.png"  alt="dog"  style={{marginRight:"20px", verticalAlign:"middle"}} />Tokenpocket Wallet</p>
+                                            </Grid>
+                                            <Grid item xs={12} sm={6}>
+                                            <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
+                                                <img src="./trust.png"  alt="dog"  style={{marginRight:"20px", verticalAlign:"middle"}} />Trust Wallet</p>
+                                            <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
+                                                <img src="./binance.png"  alt="dog"  style={{marginRight:"20px", verticalAlign:"middle"}} />Binance Chain Wallet</p>
+                                            </Grid>
                                         </Grid>
-                                        <Grid item xs={12} sm={6}>
-                                        <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
-                                            <img src="./trust.png"  alt="dog"  style={{marginRight:"20px", verticalAlign:"middle"}} />Trust Wallet</p>
-                                        <p style={{border:"1px solid lightgrey", borderRadius:"10px", padding:"33px"}}>
-                                            <img src="./binance.png"  alt="dog"  style={{marginRight:"20px", verticalAlign:"middle"}} />Binance Chain Wallet</p>
-                                        </Grid>
-                                    </Grid>
-                                </div>
-                            </Typography>
-                            </Paper>
+                                    </div>
+                                </Typography>
+                                </Paper>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                        </Container>
-                    </div>
-                </Backdrop>
+                            </Container>
+                        </div>
+                    </Backdrop>
                 </div>
+                
             </Container>
         </div>
     )

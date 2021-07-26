@@ -37,6 +37,12 @@ import Networkbuildingactivated from '../Network/Networkbuildingactivated';
 import Coiningpackage from '../Coining/Coiningpackage';
 import Coiningpackageloading from '../Coining/Coiningpackageloading';
 import Coiningpackageactive from '../Coining/Coiningpackageactive';
+import NetworkBuildingLicenceAuthorise from '../Network/NetworkBuildingLicenceAuthorise';
+import NetworkBuildingLicenceSuccess from '../Network/NetworkBuildingLicenceSuccess';
+import ConfirmSubmitted from '../Swap/ConfirmSubmitted';
+
+
+
 
 
 
@@ -185,6 +191,15 @@ export default function ButtonAppBar() {
                 </Route>
                 <Route path="/Coiningpackageactive">
                     <Coiningpackageactive />
+                </Route>
+                <Route path="/NetworkBuildingLicenceAuthorise">
+                    <NetworkBuildingLicenceAuthorise />
+                </Route>
+                <Route path="/NetworkBuildingLicenceSuccess">
+                    <NetworkBuildingLicenceSuccess />
+                </Route>
+                <Route path="/ConfirmSubmitted">
+                    <ConfirmSubmitted />
                 </Route>
                 
                 
