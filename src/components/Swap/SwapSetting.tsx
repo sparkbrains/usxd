@@ -13,6 +13,7 @@ import { Settings, HelpOutlineOutlined, WatchLaterOutlined } from '@material-ui/
 import Backdrop from '@material-ui/core/Backdrop';
 import Card from "@material-ui/core/Card";
 import { useEffect } from 'react'
+import TextField from '@material-ui/core/TextField'
 
 
 
@@ -223,6 +224,7 @@ export default function OutlinedCard() {
                                 <Button
                                     variant="contained"
                                     color="primary"
+                                    onClick={handleToggle}
                                     style={{
                                         padding: "16px",
                                         marginTop: "20px",
@@ -301,10 +303,7 @@ export default function OutlinedCard() {
 
 
                 </Grid>
-                <Button variant="outlined" color="primary" onClick={handleToggle}>
-              Show backdrop
-            </Button>
-                
+               
                 <Backdrop
               className={classes.backdrop}
               open={open}
@@ -323,7 +322,9 @@ export default function OutlinedCard() {
                         <Grid>
                           <Grid container spacing={10}>
                             <Grid item>
-                              <h1> Authorization contract</h1>
+                              <h1> Settings</h1>
+                              <p style={{fontSize: "20px"}}>Transaction Settings</p>
+                              <p style={{fontSize: "15px",textAlign: "left"}}> Slippage Tolerance</p>
                             </Grid>
                             <Grid item>
                               
@@ -331,52 +332,20 @@ export default function OutlinedCard() {
                           </Grid>
                          
                         </Grid>
-                        <h2>Allow usxd.io to use your BUSD?</h2>
-                        <p>
-                          Confirmation of the BUSD token to interact with the
-                          USxD contract.
-                        </p>
                         <Grid container spacing={3}>
                           <Grid item container xs={6}>
-                            <Button
-                              style={{
-                                backgroundColor: "#EDF9F1",
-                                color: "47C278",
-                                borderRadius: " 12px 12px",
-                                padding: "10px 45px",
-                                fontSize: "16px",
-                                marginTop: "60px",
-                                textTransform: "capitalize",
-                              }}
-                              type="submit"
-                              variant="outlined"
-                              fullWidth
-                              size="medium"
-                            >
-                              Cancel
-                            </Button>
+                          <TextField id="outlined-basic" label="" variant="outlined" />
+                          <p>Transaction deadline</p> 
                           </Grid>
                           <Grid item container xs={6}>
-                            <Button
-                              style={{
-                                backgroundColor: "#47C278",
-                                color: "white",
-                                borderRadius: " 12px 12px",
-                                padding: "10px 45px",
-                                fontSize: "16px",
-                                marginTop: "60px",
-                                textTransform: "capitalize",
-                              }}
-                              type="submit"
-                              variant="outlined"
-                              fullWidth
-                              size="medium"
-                              color="primary"
-                            >
-                              Authorize
-                            </Button>
+                          <TextField id="outlined-basic" label=" " variant="outlined" />
+                         
                           </Grid>
                         </Grid>
+                        <Grid item container xs={6}>
+                          <TextField id="outlined-basic" label="Minutes" variant="outlined" />
+                         
+                          </Grid>
                       </Card>
                     </Grid>
                   </Grid>

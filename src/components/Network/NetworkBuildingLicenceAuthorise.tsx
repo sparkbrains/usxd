@@ -15,17 +15,10 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Backdrop from "@material-ui/core/Backdrop";
-import { CheckBox } from "@material-ui/icons";
 import { Close } from "@material-ui/icons";
-import Typography from "@material-ui/core/Typography";
 import { createStyles, Theme } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
 import { ReportProblemOutlined } from "@material-ui/icons";
-// const useStyles = makeStyles({
-//   table: {
-//     minWidth: 650,
-//   },
-// });
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
