@@ -10,17 +10,14 @@ import { createStyles, Theme } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import { Settings, HelpOutlineOutlined, WatchLaterOutlined } from '@material-ui/icons';
-import Backdrop from '@material-ui/core/Backdrop';
+import Backdrop from "@material-ui/core/Backdrop";
+import { Close } from "@material-ui/icons";
+import {CheckCircleOutline} from '@material-ui/icons';
 import Card from "@material-ui/core/Card";
-import { useEffect } from 'react'
 
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        backdrop: {
-            zIndex: theme.zIndex.drawer + 1,
-            color: '#fff',
-        },
         container: {
             display: "grid",
             gridTemplateColumns: "repeat(12, 1fr)",
@@ -33,30 +30,30 @@ const useStyles = makeStyles((theme: Theme) =>
             whiteSpace: "nowrap",
             marginBottom: theme.spacing(1),
         },
-        root: {
-            flexGrow: 1,
-        },
         divider: {
             margin: theme.spacing(2, 0),
+        },
+        backdrop: {
+            zIndex: theme.zIndex.drawer + 1,
+            color: "#fff",
+          },
+        root: {
+        flexGrow: 1,
         },
     })
 );
 
-
-export default function OutlinedCard() {
+export default function SwapSubmitted() {
     const classes = useStyles();
-   
-    
-        const [open, setOpen] = React.useState(false);
-        const handleClose = () => {
-            setOpen(false);
-        };
-        const handleToggle = () => {
-            setOpen(!open);
-        };
-        useEffect(() => {
-            document.title = "SelectToken"
-        }, [])
+
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+
   
 
     return (
@@ -220,6 +217,7 @@ export default function OutlinedCard() {
 
                                 <Button
                                     variant="contained"
+                                    onClick={handleToggle}
                                     color="primary"
                                     style={{
                                         padding: "16px",
@@ -299,16 +297,18 @@ export default function OutlinedCard() {
 
 
                 </Grid>
-                <Button variant="outlined" color="primary" onClick={handleToggle}>
-              Show backdrop
-            </Button>
-                
-                <Backdrop
+
+            </Grid>
+
+            <div>
+            
+            <Backdrop
               className={classes.backdrop}
               open={open}
               onClick={handleClose}
             >
               {/* <CircularProgress color="inherit" /> */}
+
               <div className={classes.root}>
                 <Container style={{ width: "32%" }}>
                   <Grid container spacing={3}>
@@ -320,60 +320,44 @@ export default function OutlinedCard() {
                       >
                         <Grid>
                           <Grid container spacing={10}>
-                            <Grid item>
-                              <h1> Authorization contract</h1>
+                            <Grid item xs={6}>
+                            
                             </Grid>
-                            <Grid item>
-                              
+                            <Grid item xs={6} style={{alignSelf:"center"}}>
+                              <Close style={{ float:"right" }} />
                             </Grid>
                           </Grid>
-                         
+                          <CheckCircleOutline
+                            style={{ fontSize: "155px", color: "#47C278" }}
+                          />
                         </Grid>
-                        <h2>Allow usxd.io to use your BUSD?</h2>
+                        <h2>Transaction Submitted</h2>
                         <p>
-                          Confirmation of the BUSD token to interact with the
-                          USxD contract.
+                        Exchanging 1 BNB for 326 USxD
                         </p>
                         <Grid container spacing={3}>
-                          <Grid item container xs={6}>
+                          <Grid item container xs={12}>
                             <Button
                               style={{
                                 backgroundColor: "#EDF9F1",
-                                color: "47C278",
+                                color: "#47C278",
                                 borderRadius: " 12px 12px",
                                 padding: "10px 45px",
-                                fontSize: "16px",
+                                fontSize: "18px",
                                 marginTop: "60px",
                                 textTransform: "capitalize",
+                                lineHeight:"40px",
+                                fontWeight:700
                               }}
                               type="submit"
                               variant="outlined"
                               fullWidth
                               size="medium"
                             >
-                              Cancel
+                                View On BSC 
                             </Button>
                           </Grid>
-                          <Grid item container xs={6}>
-                            <Button
-                              style={{
-                                backgroundColor: "#47C278",
-                                color: "white",
-                                borderRadius: " 12px 12px",
-                                padding: "10px 45px",
-                                fontSize: "16px",
-                                marginTop: "60px",
-                                textTransform: "capitalize",
-                              }}
-                              type="submit"
-                              variant="outlined"
-                              fullWidth
-                              size="medium"
-                              color="primary"
-                            >
-                              Authorize
-                            </Button>
-                          </Grid>
+                          
                         </Grid>
                       </Card>
                     </Grid>
@@ -381,8 +365,8 @@ export default function OutlinedCard() {
                 </Container>
               </div>
             </Backdrop>
-            </Grid>
+          </div>
+
         </Container>
-        
     );
 }

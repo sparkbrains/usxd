@@ -28,7 +28,7 @@ import LoginConnectWallet from '../Login/LoginConnectWallet';
 import RegisterConnectWallet from '../Register/RegisterConnectWallet';
 import RegisterConnectWalletagree from '../Register/RegisterConnectWalletagree';
 import SelectToken  from '../Swap/SelectToken';
-import Swap1  from '../Swap/Swap1';
+import SwapAmount  from '../Swap/SwapAmount';
 import SwapSetting  from '../Swap/SwapSetting';
 import Networkbuildinglicenseactive from '../Network/Networkbuildinglicenseactive';
 import Networkbuildinglicense from '../Network/Networkbuildinglicense';
@@ -39,7 +39,13 @@ import Coiningpackageloading from '../Coining/Coiningpackageloading';
 import Coiningpackageactive from '../Coining/Coiningpackageactive';
 import NetworkBuildingLicenceAuthorise from '../Network/NetworkBuildingLicenceAuthorise';
 import NetworkBuildingLicenceSuccess from '../Network/NetworkBuildingLicenceSuccess';
-import ConfirmSubmitted from '../Swap/ConfirmSubmitted';
+import ConfirmSubmitted from '../Swap/SwapSubmitted';
+import SwapSubmitted from '../Swap/SwapSubmitted';
+import SwapConfirmed from '../Swap/SwapConfirmed';
+import CoiningPakageAuthorise from '../Coining/CoiningPakageAuthorise';
+import CoinPakageSuccess from '../Coining/CoinPakageSuccess';
+import CoinPakageClaimSuccess from '../Coining/CoinPakageClaimSuccess';
+import CoinPakageClaim from '../Coining/CoinPakageClaim';
 
 
 
@@ -163,8 +169,8 @@ export default function ButtonAppBar() {
                 <Route path="/SelectToken">
                     <SelectToken />
                 </Route>
-                <Route path="/Swap1">
-                    <Swap1 />
+                <Route path="/SwapAmount">
+                    <SwapAmount />
                 </Route>
                 <Route path="/SwapSetting">
                     <SwapSetting />
@@ -201,6 +207,28 @@ export default function ButtonAppBar() {
                 <Route path="/ConfirmSubmitted">
                     <ConfirmSubmitted />
                 </Route>
+                <Route path="/SwapSubmitted">
+                    <SwapSubmitted />
+                </Route>
+                <Route path="/SwapConfirmed">
+                    <SwapConfirmed />
+                </Route>
+                <Route path="/CoiningPakageAuthorise">
+                    <CoiningPakageAuthorise />
+                </Route>
+                <Route path="/CoinPakageSuccess">
+                    <CoinPakageSuccess />
+                </Route>
+                <Route path="/CoinPakageClaimSuccess">
+                    <CoinPakageClaimSuccess />
+                </Route>
+                <Route path="/CoinPakageClaim">
+                    <CoinPakageClaim />
+                </Route>
+                
+                
+                
+                
                 
                 
             

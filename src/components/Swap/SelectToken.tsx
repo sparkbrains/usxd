@@ -41,15 +41,11 @@ const useStyles = makeStyles((theme: Theme) =>
         pos: {
             marginBottom: 12,
         },
-<<<<<<< HEAD
         divider: {
             margin: theme.spacing(2, 0),
         },
 
     }),
-=======
-    })
->>>>>>> acacae2d82124b5c75705537861bb82ca04d26a0
 );
 const SelectToken = () => {
     const classes = useStyles();
@@ -230,7 +226,6 @@ const SelectToken = () => {
                             <Container>
                                 <Grid container spacing={3}>
                                     <Grid item xs={12}>
-<<<<<<< HEAD
                                         <InputBase
 
                                         />
@@ -255,46 +250,6 @@ const SelectToken = () => {
                                                 <p> <img src="/trust.png" alt="currencyimg"  style={{width: "11px"}}/>BIFI</p>
                                                 
                                             </div>
-=======
-                                        <Paper className={classes.paper} style={{ borderRadius: "35px", margin: "155px" }}>
-                                            <Typography variant="h5" component="h2">
-                                                <div style={{ padding: "15px 60px", borderRadius: "40px" }}>
-                                                    <h3 style={{ textAlign: "left", fontSize: "32px", color: "black" }}>Select A Token</h3>
-                                                    <TextField
-                                                        margin="normal"
-                                                        variant="outlined"
-                                                        label="Search"
-                                                        required
-                                                        fullWidth
-                                                        name="name"
-                                                        autoComplete="name"
-                                                    />
-                                                    <Grid container spacing={3}>
-                                                        <Grid item xs={12} sm={12}>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./dog.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />USxD</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./dog.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />BNB</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./token.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />BUSD</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./trust.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />ETH</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />BTC</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />XRP</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />1INCH</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />PANCAKE</p>
-                                                            <p style={{ borderRadius: "10px", textAlign: "left" }}>
-                                                                <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />BIFI</p>
-
-                                                        </Grid>
-                                                    </Grid>
-                                                </div>
-                                            </Typography>
->>>>>>> acacae2d82124b5c75705537861bb82ca04d26a0
                                         </Paper>
                                     </Grid>
                                 </Grid>
