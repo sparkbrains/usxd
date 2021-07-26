@@ -10,7 +10,10 @@ import { createStyles, Theme } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import { Settings, HelpOutlineOutlined, WatchLaterOutlined } from '@material-ui/icons';
-
+import Backdrop from "@material-ui/core/Backdrop";
+import { Close } from "@material-ui/icons";
+import {CheckCircleOutline} from '@material-ui/icons';
+import Card from "@material-ui/core/Card";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -30,11 +33,26 @@ const useStyles = makeStyles((theme: Theme) =>
         divider: {
             margin: theme.spacing(2, 0),
         },
+        backdrop: {
+            zIndex: theme.zIndex.drawer + 1,
+            color: "#fff",
+          },
+        root: {
+        flexGrow: 1,
+        },
     })
 );
 
-export default function OutlinedCard() {
+export default function SwapConfirmed() {
     const classes = useStyles();
+
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
 
     return (
         <Container>
@@ -197,6 +215,7 @@ export default function OutlinedCard() {
 
                                 <Button
                                     variant="contained"
+                                    onClick={handleToggle}
                                     color="primary"
                                     style={{
                                         padding: "16px",
@@ -278,6 +297,73 @@ export default function OutlinedCard() {
                 </Grid>
 
             </Grid>
+
+            <div>
+            
+            <Backdrop
+              className={classes.backdrop}
+              open={open}
+              onClick={handleClose}
+            >
+              {/* <CircularProgress color="inherit" /> */}
+
+              <div className={classes.root}>
+                <Container style={{ width: "32%" }}>
+                  <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                      <Card
+                        className="card"
+                        raised={true}
+                        style={{ padding: "45px", borderRadius: "30px" }}
+                      >
+                        <Grid>
+                          <Grid container spacing={10}>
+                            <Grid item xs={6}>
+                            <h2>Confirm Swap</h2>
+                            </Grid>
+                            <Grid item xs={6} style={{alignSelf:"center"}}>
+                              <Close style={{ float:"right" }} />
+                            </Grid>
+                          </Grid>
+                          
+                        </Grid>
+                        <h2>From</h2>
+                        <p>
+                        to
+                        </p>
+                        <Grid container spacing={3}>
+                          <Grid item container xs={12}>
+                            <Button
+                              style={{
+                                backgroundColor: "#EDF9F1",
+                                color: "#47C278",
+                                borderRadius: " 12px 12px",
+                                padding: "10px 45px",
+                                fontSize: "18px",
+                                marginTop: "60px",
+                                textTransform: "capitalize",
+                                lineHeight:"40px",
+                                fontWeight:700
+                              }}
+                              type="submit"
+                              variant="outlined"
+                              fullWidth
+                              size="medium"
+                            >
+                                Confirm 
+                            </Button>
+                          </Grid>
+                          
+                        </Grid>
+                      </Card>
+                    </Grid>
+                  </Grid>
+                </Container>
+              </div>
+            </Backdrop>
+          </div>
+
+
         </Container>
     );
 }

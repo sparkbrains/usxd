@@ -28,7 +28,7 @@ import LoginConnectWallet from '../Login/LoginConnectWallet';
 import RegisterConnectWallet from '../Register/RegisterConnectWallet';
 import RegisterConnectWalletagree from '../Register/RegisterConnectWalletagree';
 import SelectToken  from '../Swap/SelectToken';
-import Swap1  from '../Swap/Swap1';
+import SwapAmount  from '../Swap/SwapAmount';
 import SwapSetting  from '../Swap/SwapSetting';
 import Networkbuildinglicenseactive from '../Network/Networkbuildinglicenseactive';
 import Networkbuildinglicense from '../Network/Networkbuildinglicense';
@@ -166,8 +166,8 @@ export default function ButtonAppBar() {
                 <Route path="/SelectToken">
                     <SelectToken />
                 </Route>
-                <Route path="/Swap1">
-                    <Swap1 />
+                <Route path="/SwapAmount">
+                    <SwapAmount />
                 </Route>
                 <Route path="/SwapSetting">
                     <SwapSetting />

@@ -41,7 +41,6 @@ const useStyles = makeStyles((theme: Theme) =>
         pos: {
             marginBottom: 12,
         },
-
         divider: {
             margin: theme.spacing(2, 0),
         },
@@ -229,7 +228,6 @@ const SelectToken = () => {
                             <Container>
                                 <Grid container spacing={3}>
                                     <Grid item xs={12}>
-
                                         <InputBase
 
                                         />

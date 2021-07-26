@@ -10,18 +10,11 @@ import { createStyles, Theme } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import { Settings, HelpOutlineOutlined, WatchLaterOutlined } from '@material-ui/icons';
-import Backdrop from '@material-ui/core/Backdrop';
-import Card from "@material-ui/core/Card";
-import { useEffect } from 'react'
-import TextField from '@material-ui/core/TextField'
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        backdrop: {
-            zIndex: theme.zIndex.drawer + 1,
-            color: '#fff',
-        },
         container: {
             display: "grid",
             gridTemplateColumns: "repeat(12, 1fr)",
@@ -34,31 +27,14 @@ const useStyles = makeStyles((theme: Theme) =>
             whiteSpace: "nowrap",
             marginBottom: theme.spacing(1),
         },
-        root: {
-            flexGrow: 1,
-        },
         divider: {
             margin: theme.spacing(2, 0),
         },
     })
 );
 
-
-export default function OutlinedCard() {
+export default function SwapAmount() {
     const classes = useStyles();
-   
-    
-        const [open, setOpen] = React.useState(false);
-        const handleClose = () => {
-            setOpen(false);
-        };
-        const handleToggle = () => {
-            setOpen(!open);
-        };
-        useEffect(() => {
-            document.title = "SelectToken"
-        }, [])
-  
 
     return (
         <Container>
@@ -222,7 +198,6 @@ export default function OutlinedCard() {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={handleToggle}
                                     style={{
                                         padding: "16px",
                                         marginTop: "20px",
@@ -301,57 +276,8 @@ export default function OutlinedCard() {
 
 
                 </Grid>
-               
-                <Backdrop
-              className={classes.backdrop}
-              open={open}
-              onClick={handleClose}
-            >
-              {/* <CircularProgress color="inherit" /> */}
-              <div className={classes.root}>
-                <Container style={{ width: "32%" }}>
-                  <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                      <Card
-                        className="card"
-                        raised={true}
-                        style={{ padding: "45px", borderRadius: "30px" }}
-                      >
-                        <Grid>
-                          <Grid container spacing={10}>
-                            <Grid item>
-                              <h1> Settings</h1>
-                              <p style={{fontSize: "20px"}}>Transaction Settings</p>
-                              <p style={{fontSize: "15px",textAlign: "left"}}> Slippage Tolerance</p>
-                            </Grid>
-                            <Grid item>
-                              
-                            </Grid>
-                          </Grid>
-                         
-                        </Grid>
-                        <Grid container spacing={3}>
-                          <Grid item container xs={6}>
-                          <TextField id="outlined-basic" label="" variant="outlined" />
-                          <p>Transaction deadline</p> 
-                          </Grid>
-                          <Grid item container xs={6}>
-                          <TextField id="outlined-basic" label=" " variant="outlined" />
-                         
-                          </Grid>
-                        </Grid>
-                        <Grid item container xs={6}>
-                          <TextField id="outlined-basic" label="Minutes" variant="outlined" />
-                         
-                          </Grid>
-                      </Card>
-                    </Grid>
-                  </Grid>
-                </Container>
-              </div>
-            </Backdrop>
+
             </Grid>
         </Container>
-        
     );
 }
