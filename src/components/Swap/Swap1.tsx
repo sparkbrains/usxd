@@ -1,219 +1,283 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
-import TreeView from '@material-ui/lab/TreeView';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import TreeItem from '@material-ui/lab/TreeItem';
-import { Link, } from 'react-router-dom';
-import { PostAdd } from '@material-ui/icons';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import { createStyles, Theme } from "@material-ui/core/styles";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
+import { Settings, HelpOutlineOutlined, WatchLaterOutlined } from '@material-ui/icons';
 
-
-import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
-
-const drawerWidth = 180;
 
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
-            display: 'flex',
+        container: {
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gridGap: theme.spacing(3),
         },
-        drawer: {
-            [theme.breakpoints.up('sm')]: {
-                width: drawerWidth,
-                flexShrink: 0,
-            },
+        paper: {
+            padding: theme.spacing(1),
+            textAlign: "center",
+            color: theme.palette.text.secondary,
+            whiteSpace: "nowrap",
+            marginBottom: theme.spacing(1),
         },
-        appBar: {
-            [theme.breakpoints.up('sm')]: {
-                width: `calc(100% - ${drawerWidth}px)`,
-                marginLeft: drawerWidth,
-            },
+        divider: {
+            margin: theme.spacing(2, 0),
         },
-        menuButton: {
-            marginRight: theme.spacing(2),
-            [theme.breakpoints.up('sm')]: {
-                display: 'none',
-            },
-        },
-        // necessary for content to be below app bar
-        toolbar: theme.mixins.toolbar,
-        drawerPaper: {
-            width: drawerWidth,
-        },
-        content: {
-            flexGrow: 1,
-            padding: theme.spacing(3),
-        },
-    }),
+    })
 );
 
-interface Props {
-
-    window?: () => Window;
-}
-
-export default function ResponsiveDrawer(props: Props) {
-
-    const [expanded, setExpanded] = React.useState<string[]>([]);
-    const [selected, setSelected] = React.useState<string[]>([]);
-
-    const handleToggle = (event: React.ChangeEvent<{}>, nodeIds: string[]) => {
-        setExpanded(nodeIds);
-    };
-
-    const handleSelect = (event: React.ChangeEvent<{}>, nodeIds: string[]) => {
-        setSelected(nodeIds);
-    };
-    const { window } = props;
+export default function OutlinedCard() {
     const classes = useStyles();
-    const theme = useTheme();
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
-
-    const drawer = (
-        <div>
-            <div className={classes.toolbar} />
-            <Divider />
-            <List>
-                <TreeView
-                    className={classes.root}
-                    defaultCollapseIcon={<ExpandMoreIcon />}
-                    defaultExpandIcon={<ChevronRightIcon />}
-                    expanded={expanded}
-                    selected={selected}
-                    onNodeToggle={handleToggle}
-                    onNodeSelect={handleSelect}
-                >
-                    <Link className="id" to="/Dashboard">
-                        <ListItem button key={'Dashboard'}>
-                            <ListItemText primary={'Dashboard'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                        </ListItem>
-                    </Link>
-                    <ExpandMoreIcon />
-                    <TreeItem nodeId="1" label="Exchange" style={{ padding: "15px" }}>
-                        <Link className="id" to="/SelectToken">
-                            <ListItem button key={'SelectToken'}>
-                                <ListItemText primary={'On PancakeSwap'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                            </ListItem>
-                        </Link>
-
-                        <Link className="id" to="/Swap1">
-                            <ListItem button key={'Swap1'}>
-                                <ListItemText primary={'Swap'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                            </ListItem>
-                        </Link>
-
-                    </TreeItem>
-                    <img src="./binance.png" alt="dog" style={{ marginRight: "20px", verticalAlign: "middle" }} />
-
-                    <Link className="id" to="/Network building">
-                        <ListItem button key={'Network building'}>
-                            <ListItemText primary={'Network building'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                        </ListItem>
-                    </Link>
-                    <Link className="id" to="/Coining package">
-                        <ListItem button key={'Coining package'}>
-                            <ListItemText primary={'Coining package'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                        </ListItem>
-                    </Link>
-
-                    <TreeItem nodeId="1" label="More Infomation" style={{ padding: "15px" }} >
-                        <Link className="id" to="/Audit">
-                            <ListItem button key={'Audit'}>
-                                <ListItemText primary={'Audit'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                            </ListItem>
-                        </Link>
-
-                        <PostAdd />
-                        <Link className="id" to="/Document">
-                            <ListItem button key={'Document'}>
-                                <ListItemText primary={'Document'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                            </ListItem>
-                        </Link>
-
-
-                    </TreeItem>
-                </TreeView>
-
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
-
-    const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <div className={classes.root}>
+        <Container>
+            <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justify="center"
+                style={{ minHeight: "100vh" }}
+            >
+                <Grid item xs={7}>
+                    <Paper style={{ borderRadius: "20px" }}>
+                        <Typography variant="subtitle1" color="textSecondary">
+                            <div style={{ padding: "120px" }}>
 
-            <CssBaseline />
-            <AppBar position="fixed" className={classes.appBar}>
+                                <Grid container spacing={3}>
+                                    <Grid container spacing={3}>
+                                        <Grid item xs={6}>
+                                            <Paper
+                                                style={{ boxShadow: "none", }}
+                                                className={classes.paper}
+                                            >
+                                                <h2
+                                                    style={{
+                                                        textAlign: "left",
+                                                        fontSize: "40px",
+                                                        color: "black",
+                                                        lineHeight: "0px",
+                                                    }}
+                                                >
+                                                    {" "}
+                                                    Swap
+                                                </h2>
+                                            </Paper>
 
-            </AppBar>
-            <nav className={classes.drawer} aria-label="mailbox folders">
+                                        </Grid>
 
-                <Hidden smUp implementation="css">
-                    <Drawer
-                        container={container}
-                        variant="temporary"
-                        anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-                        open={mobileOpen}
-                        onClose={handleDrawerToggle}
-                        classes={{
-                            paper: classes.drawerPaper,
-                        }}
-                        ModalProps={{
-                            keepMounted: true, // Better open performance on mobile.
-                        }}
-                    >
-                        {drawer}
-                    </Drawer>
-                </Hidden>
-                <Hidden xsDown implementation="css">
-                    <Drawer
-                        classes={{
-                            paper: classes.drawerPaper,
-                        }}
-                        variant="permanent"
-                        open
-                    >
-                        {drawer}
-                    </Drawer>
-                </Hidden>
-            </nav>
-            <main className={classes.content}>
-                <div className={classes.toolbar} />
-                <Typography paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                        <Grid
+                                            item
+                                            xs={6}
 
-                </Typography>
-                <Typography paragraph>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
+                                        >
+                                            <Grid item xs={3} style={{ padding: "30px" }}>
 
-                </Typography>
-            </main>
-        </div>
+                                                <Settings style={{ fontSize: "20px", color: '#47C278' }} />
+                                                <WatchLaterOutlined style={{ fontSize: "20px", color: '#47C278' }} />
+
+                                            </Grid>
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <Paper
+                                                style={{ boxShadow: "none", textAlign: "left" }}
+                                                className={classes.paper}
+                                            >
+                                                From
+                                            </Paper>
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <Grid item xs={3}>
+                                                <Paper
+                                                    style={{ boxShadow: "none" }}
+                                                    className={classes.paper}
+                                                >
+                                                    Available:88,372 BNB
+                                                </Paper>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Select
+                                        fullWidth
+                                        labelId="demo-controlled-open-select-label"
+                                        id="demo-controlled-open-select"
+                                        variant="outlined"
+                                        style={{ borderRadius: "17px" }}
+                                    >
+                                        <MenuItem value="">
+                                            <em>None</em>
+                                        </MenuItem>
+                                        <MenuItem value={10}>
+                                            Register with 100 BUSD by ID address{" "}
+                                        </MenuItem>
+                                        <MenuItem value={20}>
+                                            Then, convert a pixel value to em
+                                        </MenuItem>
+                                        <MenuItem value={30}>
+                                            convert an em value to pixels
+                                        </MenuItem>
+                                    </Select>
+                                    <Grid container spacing={3}>
+                                        <Grid item xs={6}>
+                                            <Paper
+                                                style={{ boxShadow: "none", textAlign: "left" }}
+                                                className={classes.paper}
+                                            >
+                                                To
+                                            </Paper>
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <Grid item xs={3}>
+                                                <Paper
+                                                    style={{ boxShadow: "none" }}
+                                                    className={classes.paper}
+                                                >
+                                                    Available:0
+                                                </Paper>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+
+                                    <Select
+                                        fullWidth
+                                        labelId="demo-controlled-open-select-label"
+                                        id="demo-controlled-open-select"
+                                        variant="outlined"
+                                        style={{ borderRadius: "17px" }}
+                                    >
+                                        <MenuItem value="">
+                                            <em>None</em>
+                                        </MenuItem>
+                                        <MenuItem value={10}>
+                                            Register with 100 BUSD by ID address{" "}
+                                        </MenuItem>
+                                        <MenuItem value={20}>
+                                            Then, convert a pixel value to em
+                                        </MenuItem>
+                                        <MenuItem value={30}>
+                                            convert an em value to pixels
+                                        </MenuItem>
+                                    </Select>
+                                    <Grid item xs={6}>
+                                        <Box
+                                            fontWeight="fontWeightBold"
+                                            fontSize="h6.fontSize"
+                                            m={1}
+                                        ></Box>
+                                    </Grid>
+                                </Grid>
+                                <Grid container spacing={3}>
+                                    <Grid item xs={6}>
+                                        <Paper
+                                            style={{ boxShadow: "none", textAlign: "left" }}
+                                            className={classes.paper}
+                                        >
+                                            Price
+                                        </Paper>
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                        <Grid item xs={3}>
+                                            <Paper
+                                                style={{ boxShadow: "none", color: 'black' }}
+                                                className={classes.paper}
+                                            >
+                                                0.0030505 BNB per USxD
+                                            </Paper>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+
+
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    style={{
+                                        padding: "16px",
+                                        marginTop: "20px",
+                                        width: "100%",
+                                        borderRadius: "12px",
+                                        backgroundColor: "#47C278",
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                    }}
+                                >
+                                    Swap
+                                </Button>
+                            </div>
+                        </Typography>
+                    </Paper>
+                    <Grid container spacing={3}>
+                        <Grid item xs={6}>
+                            <Paper
+                                style={{ boxShadow: "none", }}
+                                className={classes.paper}
+                            >
+                                Minimum received<HelpOutlineOutlined />
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Grid item xs={3}>
+                                <Paper
+                                    style={{ boxShadow: "none", color: 'black' }}
+                                    className={classes.paper}
+                                >
+                                    326.492 USxD
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid container spacing={3}>
+                        <Grid item xs={6}>
+                            <Paper
+                                style={{ boxShadow: "none", }}
+                                className={classes.paper}
+                            >
+                                Price Impact<HelpOutlineOutlined />
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Grid item xs={3}>
+                                <Paper
+                                    style={{ boxShadow: "none", color: "#47C278" }}
+                                    className={classes.paper}
+                                >
+                                    0.01%
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid container spacing={3}>
+                        <Grid item xs={6}>
+                            <Paper
+                                style={{ boxShadow: "none", }}
+                                className={classes.paper}
+                            >
+                                Liquidity Provider Fee<HelpOutlineOutlined />
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Grid item xs={3}>
+                                <Paper
+                                    style={{ boxShadow: "none", color: 'black' }}
+                                    className={classes.paper}
+                                >
+                                    0.0025 BNB
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+                </Grid>
+
+            </Grid>
+        </Container>
     );
 }
