@@ -46,7 +46,6 @@ const Home = () => {
 
     return (
         
-
         <div>
             <div style={{ backgroundImage: "url(/section1-blur-bg.png)",paddingTop:"100px",backgroundRepeat: 'no-repeat' }}>
                 <Container >
@@ -102,7 +101,6 @@ const Home = () => {
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
-
                             </Card>
                         </Grid>
                         <Grid item xs={4}>

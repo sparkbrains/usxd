@@ -10,10 +10,8 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Backdrop from "@material-ui/core/Backdrop";
 import { Close } from "@material-ui/icons";
-import { ReportProblemOutlined } from "@material-ui/icons";
 import Card from "@material-ui/core/Card";
-import {CheckCircleOutline} from '@material-ui/icons';
-import {ErrorOutline} from '@material-ui/icons';
+import { ErrorOutline } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,13 +31,13 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: theme.spacing(2, 0),
     },
     backdrop: {
-        zIndex: theme.zIndex.drawer + 1,
-        color: "#fff",
-      },
-      root: {
-        flexGrow: 1,
-      },
-      
+      zIndex: theme.zIndex.drawer + 1,
+      color: "#fff",
+    },
+    root: {
+      flexGrow: 1,
+    },
+
   })
 );
 
@@ -54,10 +52,10 @@ const CoinPakageClaim = () => {
     setOpen(!open);
   };
 
-  
+
 
   useEffect(() => {
-    document.title = "Coiningpackage";
+    document.title = "Coiningpackageclaim";
   }, []);
 
   return (
@@ -70,36 +68,39 @@ const CoinPakageClaim = () => {
         }}
       >
         <Container>
-        <Button
-          variant="contained"
-          href="#contained-buttons"
-         
-          style={{  backgroundColor: "black",color:"#FFFFF0", textTransform: "capitalize",borderRadius: "12px",padding: "10px", }}
-        >
-          Coining Package
-        </Button>
-        <Button
-          variant="contained"
-          disabled
-          href="#contained-buttons"
-          style={{
-            textTransform: "capitalize",
-            padding: "10px",
-          
-            borderRadius: "12px",
-          }}
-        >
-          Package Activated
-        </Button>
-        <Button
-          variant="contained"
-          disabled
-          style={{ margin: "2px", textTransform: "capitalize",borderRadius: "12px", padding: "10px",}}
-        >
-          Retirement Wallet
-        </Button>
-        
-        
+          <Button
+            variant="contained"
+            disabled
+            href="#contained-buttons"
+            style={{
+              textTransform: "capitalize",
+              padding: "10px",
+
+              borderRadius: "12px",
+            }}
+
+
+          >
+            Coining Package
+          </Button>
+          <Button
+            variant="contained"
+
+            href="#contained-buttons"
+
+            style={{ backgroundColor: "black", color: "#FFFFF0", textTransform: "capitalize", borderRadius: "12px", padding: "10px", }}
+          >
+            Package Activated
+          </Button>
+          <Button
+            variant="contained"
+            disabled
+            style={{ margin: "2px", textTransform: "capitalize", borderRadius: "12px", padding: "10px", }}
+          >
+            Retirement Wallet
+          </Button>
+
+
           <Grid container spacing={2}>
             <Grid item xs={6}>
               <img src="/section2-package.png" alt="packageimg" width="100%" />
@@ -158,15 +159,12 @@ const CoinPakageClaim = () => {
                           <Paper
                             style={{
                               boxShadow: "none",
-                              color: "#47C278",
-                              borderRadius: "50px 50px",
-                              border: " 2px solid #47C278",
                               margin: "0px 47px",
                               fontSize: "15px",
                             }}
                             className={classes.paper}
                           >
-                            30 days
+                            28 days left
                           </Paper>
                           <Paper
                             style={{ boxShadow: "none" }}
@@ -190,7 +188,7 @@ const CoinPakageClaim = () => {
                           style={{ boxShadow: "none", textAlign: "left" }}
                           className={classes.paper}
                         >
-                          --USxD
+                          1,250 --USxD
                         </Paper>
                       </Grid>
                       <Grid
@@ -220,6 +218,142 @@ const CoinPakageClaim = () => {
                     </Grid>
                     <Button
                       variant="contained"
+                      onClick={handleToggle}
+                      color="primary"
+                      style={{
+                        padding: "16px",
+                        marginTop: "20px",
+                        width: "100%",
+                        borderRadius: "12px",
+                        backgroundColor: "#47C278",
+                        color: "black",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      Claim
+                    </Button>
+                  </div>
+                </Typography>
+              </Paper>
+            </Grid>
+          </Grid>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <Paper style={{ borderRadius: "20px" }}>
+                <Typography variant="subtitle1" color="textSecondary">
+                  <div style={{ padding: "20px" }}>
+                    <Typography variant="subtitle1" gutterBottom>
+                      <h2
+                        style={{
+                          textAlign: "left",
+                          fontSize: "40px",
+                          color: "black",
+                          lineHeight: "0px",
+                        }}
+                      >
+                        {" "}
+                        500 BUSD
+                        <span style={{ fontSize: "20px" }}>/Pakage</span>
+                      </h2>
+                    </Typography>
+                    <Grid container spacing={3}>
+                      <Grid item xs={6}>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          Daily Profit (APY)
+                        </Paper>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          Duration
+                        </Paper>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          Claim Lockup
+                        </Paper>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Box
+                          fontWeight="fontWeightBold"
+                          fontSize="h6.fontSize"
+                          m={1}
+                        >
+                          <Paper
+                            style={{ boxShadow: "none" }}
+                            className={classes.paper}
+                          >
+                            0,25%
+                          </Paper>
+                          <Paper
+                            style={{
+                              boxShadow: "none",
+                              margin: "0px 47px",
+                              fontSize: "15px",
+                            }}
+                            className={classes.paper}
+                          >
+                            8 days left
+                          </Paper>
+                          <Paper
+                            style={{ boxShadow: "none" }}
+                            className={classes.paper}
+                          >
+                            48 Hour(s)
+                          </Paper>
+                        </Box>
+                      </Grid>
+                    </Grid>
+                    <Divider className={classes.divider} />
+                    <Grid container spacing={3}>
+                      <Grid item xs={6}>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          Earned
+                        </Paper>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          2,632--USxD
+                        </Paper>
+                      </Grid>
+                      <Grid
+                        item
+                        xs={6}
+                        style={{
+                          borderRadius: "50px 50px",
+                          border: " 2px solid #DBDFE6",
+                        }}
+                      >
+                        <Grid item xs={3}>
+                          <Paper
+                            style={{ boxShadow: "none" }}
+                            className={classes.paper}
+                          >
+                            Quantity to purchase
+                          </Paper>
+                          <Paper
+                            style={{ boxShadow: "none" }}
+                            className={classes.paper}
+                          >
+                            4
+                            ≈2,000 BUSD
+                          </Paper>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                    <Button
+                      variant="contained"
+                      onClick={handleToggle}
                       color="primary"
                       style={{
                         padding: "16px",
@@ -229,9 +363,144 @@ const CoinPakageClaim = () => {
                         backgroundColor: "#47C278",
                         fontSize: "16px",
                         lineHeight: "24px",
+                        textTransform: "capitalize",
                       }}
                     >
-                      Authorize BUSD
+                      Claim
+                    </Button>
+                  </div>
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper style={{ borderRadius: "20px" }}>
+                <Typography variant="subtitle1" color="textSecondary">
+                  <div style={{ padding: "20px" }}>
+                    <Typography variant="subtitle1" gutterBottom>
+                      <h2
+                        style={{
+                          textAlign: "left",
+                          fontSize: "40px",
+                          color: "black",
+                          lineHeight: "0px",
+                        }}
+                      >
+                        {" "}
+                        500 BUSD
+                        <span style={{ fontSize: "20px" }}>/Pakage</span>
+                      </h2>
+                    </Typography>
+                    <Grid container spacing={3}>
+                      <Grid item xs={6}>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          Daily Profit (APY)
+                        </Paper>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          Duration
+                        </Paper>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          Claim Lockup
+                        </Paper>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Box
+                          fontWeight="fontWeightBold"
+                          fontSize="h6.fontSize"
+                          m={1}
+                        >
+                          <Paper
+                            style={{ boxShadow: "none" }}
+                            className={classes.paper}
+                          >
+                            0,25%
+                          </Paper>
+                          <Paper
+                            style={{
+                              boxShadow: "none",
+
+                              borderRadius: "50px 50px",
+
+                              margin: "0px 47px",
+                              fontSize: "15px",
+                            }}
+                            className={classes.paper}
+                          >
+                            1 days left
+                          </Paper>
+                          <Paper
+                            style={{ boxShadow: "none" }}
+                            className={classes.paper}
+                          >
+                            48 Hour(s)
+                          </Paper>
+                        </Box>
+                      </Grid>
+                    </Grid>
+                    <Divider className={classes.divider} />
+                    <Grid container spacing={3}>
+                      <Grid item xs={6}>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          Earned
+                        </Paper>
+                        <Paper
+                          style={{ boxShadow: "none", textAlign: "left" }}
+                          className={classes.paper}
+                        >
+                          0--USxD
+                        </Paper>
+                      </Grid>
+                      <Grid
+                        item
+                        xs={6}
+                        style={{
+                          borderRadius: "50px 50px",
+                          border: " 2px solid #DBDFE6",
+                        }}
+                      >
+                        <Grid item xs={3}>
+                          <Paper
+                            style={{ boxShadow: "none" }}
+                            className={classes.paper}
+                          >
+                            Quantity to purchase
+                          </Paper>
+                          <Paper
+                            style={{ boxShadow: "none" }}
+                            className={classes.paper}
+                          >
+                            2
+                            ≈500 BUSD
+                          </Paper>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      style={{
+                        padding: "16px",
+                        marginTop: "20px",
+                        width: "100%",
+                        borderRadius: "12px",
+                        backgroundColor: " #F3F4F7",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      Claim
                     </Button>
                   </div>
                 </Typography>
@@ -240,9 +509,7 @@ const CoinPakageClaim = () => {
           </Grid>
 
           <div>
-            <Button variant="outlined" color="primary" onClick={handleToggle}>
-              Show backdrop
-            </Button>
+
             <Backdrop
               className={classes.backdrop}
               open={open}
@@ -251,7 +518,7 @@ const CoinPakageClaim = () => {
               {/* <CircularProgress color="inherit" /> */}
 
               <div className={classes.root}>
-                <Container style={{ width: "32%" }}>
+                <Container style={{ width: "45%" }}>
                   <Grid container spacing={3}>
                     <Grid item xs={12}>
                       <Card
@@ -264,9 +531,9 @@ const CoinPakageClaim = () => {
                             <Grid item xs={6}>
                               <h1> Claim </h1>
                             </Grid>
-                            <Grid item xs={6} style={{alignSelf:"center"}}>
-                              <Close style={{ float:"right" }} />
-                              
+                            <Grid item xs={6} style={{ alignSelf: "center" }}>
+                              <Close style={{ float: "right" }} />
+
                             </Grid>
                           </Grid>
                           <ErrorOutline
@@ -275,7 +542,7 @@ const CoinPakageClaim = () => {
                         </Grid>
                         <h2>Claim 1,250 USxD your profit</h2>
                         <p>
-                        You will receive 70% of what you claim and 30% goes into your retirement wallet.
+                          You will receive 70% of what you claim and 30% goes into your retirement wallet.
                         </p>
                         <Grid container spacing={3}>
                           <Grid item container xs={12}>
@@ -288,8 +555,8 @@ const CoinPakageClaim = () => {
                                 fontSize: "18px",
                                 marginTop: "60px",
                                 textTransform: "capitalize",
-                                lineHeight:"40px",
-                                fontWeight:700
+                                lineHeight: "40px",
+                                fontWeight: 700
                               }}
                               type="submit"
                               variant="outlined"
@@ -299,7 +566,7 @@ const CoinPakageClaim = () => {
                               Claim
                             </Button>
                           </Grid>
-                          
+
                         </Grid>
                       </Card>
                     </Grid>

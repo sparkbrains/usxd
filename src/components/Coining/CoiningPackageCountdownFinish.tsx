@@ -141,7 +141,7 @@ const CoiningPackageCountdownFinish= () => {
                                                         }}
                                                         className={classes.paper}
                                                     >
-                                                        28 days left
+                                                        0 days left
                                                     </Paper>
                                                     <Paper
                                                         style={{ boxShadow: "none" }}
@@ -165,7 +165,7 @@ const CoiningPackageCountdownFinish= () => {
                                                     style={{ boxShadow: "none", textAlign: "left" }}
                                                     className={classes.paper}
                                                 >
-                                                   1,250 --USxD
+                                                   0 --USxD
                                                 </Paper>
                                             </Grid>
                                             <Grid
@@ -201,8 +201,8 @@ const CoiningPackageCountdownFinish= () => {
                                                 marginTop: "20px",
                                                 width: "100%",
                                                 borderRadius: "12px",
-                                                backgroundColor: "#47C278",
-                                                color: "black",
+                                                backgroundColor: "#E7EAEE",
+                                                color: "#DBDFE6",
                                                 fontSize: "16px",
                                                 lineHeight: "24px",
                                             }}

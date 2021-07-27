@@ -16,9 +16,9 @@ import RegisterStep2 from '../Register/Registerstep2';
 import RegisterStepLoading from '../Register/RegisterStepLoading';
 import Register from '../Register/Register';
 import RegisterStepCheck from '../Register/RegisterStepCheck'
-import RegisterStep3 from '../Register/RegisterStep3'  
-import RegisterStep3Loading from '../Register/RegisterStep3Loading' 
-import RegisterStep3Check from '../Register/RegisterStep3Check' 
+import RegisterStep3 from '../Register/RegisterStep3'
+import RegisterStep3Loading from '../Register/RegisterStep3Loading'
+import RegisterStep3Check from '../Register/RegisterStep3Check'
 import RegisterStep3Activation from '../Register/RegisterStep3Activation'
 import Registerstep2dropdown from '../Register/Registerstep2dropdown';
 import './Navbar.css'
@@ -27,9 +27,9 @@ import Swap from '../Swap/Swap';
 import LoginConnectWallet from '../Login/LoginConnectWallet';
 import RegisterConnectWallet from '../Register/RegisterConnectWallet';
 import RegisterConnectWalletagree from '../Register/RegisterConnectWalletagree';
-import SelectToken  from '../Swap/SelectToken';
-import SwapAmount  from '../Swap/SwapAmount';
-import SwapSetting  from '../Swap/SwapSetting';
+import SelectToken from '../Swap/SelectToken';
+import SwapAmount from '../Swap/SwapAmount';
+import SwapSetting from '../Swap/SwapSetting';
 import Networkbuildinglicenseactive from '../Network/Networkbuildinglicenseactive';
 import Networkbuildinglicense from '../Network/Networkbuildinglicense';
 import Networkbuildinglicenseloading from '../Network/Networkbuildinglicenseloading';
@@ -43,6 +43,15 @@ import ConfirmSubmitted from '../Swap/ConfirmSubmitted';
 import CoiningPackageActivated from '../Coining/CoiningPackageActivated';
 import CoiningPackageCountdownFinish from '../Coining/CoiningPackageCountdownFinish';
 import CoiningPackageDurationFinish from '../Coining/CoiningPackageDurationFinish';
+import CoinPakageClaimSuccess from '../Coining/CoinPakageClaimSuccess';
+import CoinPakageSuccess from '../Coining/CoinPakageSuccess';
+import CoinPakageClaim from '../Coining/CoinPakageClaim';
+import CoiningPackageRetirementWallet from '../Coining/CoiningPackageRetirementWallet';
+import CoiningPackageDuration from '../Coining/CoiningPackageDuration';
+import CoiningPackageDuration1 from '../Coining/CoiningPackageDuration1';
+import SwapConfirmed from '../Swap/SwapConfirmed';
+import Sidebar from './Sidebar';
+import SidebarFooter from './SidebarFooter';
 
 
 
@@ -184,10 +193,10 @@ export default function ButtonAppBar() {
                 <Route path="/Networkbuildingactivated">
                     <Networkbuildingactivated />
                 </Route>
-                
-              
+
+
                 <Route path="/Coiningpackage">
-                    <Coiningpackage/>
+                    <Coiningpackage />
                 </Route>
                 <Route path="/Coiningpackageloading">
                     <Coiningpackageloading />
@@ -213,14 +222,46 @@ export default function ButtonAppBar() {
                 <Route path="/CoiningPackageDurationFinish">
                     <CoiningPackageDurationFinish />
                 </Route>
-            
-                
-               
-                
-            
-                
-                
-                
+                <Route path="/CoinPakageClaimSuccess">
+                    <CoinPakageClaimSuccess />
+                </Route>
+                <Route path="/CoinPakageSuccess">
+                    <CoinPakageSuccess />
+                </Route>
+                <Route path="/CoinPakageClaim">
+                    <CoinPakageClaim />
+                </Route>
+                <Route path="/CoiningPackageRetirementWallet">
+                    <CoiningPackageRetirementWallet />
+                </Route>
+                <Route path="/CoiningPackageDuration">
+                    <CoiningPackageDuration />
+                </Route>
+                <Route path="/CoiningPackageDuration1">
+                    <CoiningPackageDuration1 />
+                </Route>
+                <Route path="/SwapConfirmed">
+                    <SwapConfirmed />
+                </Route>
+                <Route path="/Sidebar">
+                    <Sidebar />
+                </Route>
+                <Route path="/SidebarFooter">
+                    <SidebarFooter />
+                </Route>
+
+
+
+
+
+
+
+
+
+
+
+
+
             </Switch>
         </Router>
     );

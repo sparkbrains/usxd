@@ -9,9 +9,7 @@ import Divider from "@material-ui/core/Divider";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Backdrop from "@material-ui/core/Backdrop";
-import { Close } from "@material-ui/icons";
 import Card from "@material-ui/core/Card";
-import {CheckCircleOutline} from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -42,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const CoinPakageSuccess = () => {
+const CoiningPackageDuration = () => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -56,7 +54,7 @@ const CoinPakageSuccess = () => {
   
 
   useEffect(() => {
-    document.title = "Coiningpackage";
+    document.title = "CoiningPackageDuration";
   }, []);
 
   return (
@@ -219,8 +217,8 @@ const CoinPakageSuccess = () => {
                     </Grid>
                     <Button
                       variant="contained"
-                      color="primary"
                       onClick={handleToggle}
+                      color="primary"
                       style={{
                         padding: "16px",
                         marginTop: "20px",
@@ -240,6 +238,7 @@ const CoinPakageSuccess = () => {
           </Grid>
 
           <div>
+          
             <Backdrop
               className={classes.backdrop}
               open={open}
@@ -248,7 +247,7 @@ const CoinPakageSuccess = () => {
               {/* <CircularProgress color="inherit" /> */}
 
               <div className={classes.root}>
-                <Container style={{ width: "45%" }}>
+                <Container style={{ width: "32%" }}>
                   <Grid container spacing={3}>
                     <Grid item xs={12}>
                       <Card
@@ -259,44 +258,68 @@ const CoinPakageSuccess = () => {
                         <Grid>
                           <Grid container spacing={10}>
                             <Grid item xs={6}>
-                              <h1> Active Coining Package</h1>
+                              <p>Select duration</p>
                             </Grid>
-                            <Grid item xs={6} style={{alignSelf:"center"}}>
-                              <Close style={{ float:"right" }} />
+                            <Grid item xs={6} style={{ alignSelf: "center" }}>
+                             
                             </Grid>
                           </Grid>
-                          <CheckCircleOutline
-                            style={{ fontSize: "155px", color: "#47C278" }}
-                          />
+                         
                         </Grid>
-                        <h2>Successfully</h2>
-                        <p>
-                        You have successfully activated 2 Coining Package
-                        </p>
-                        <Grid container spacing={3}>
-                          <Grid item container xs={12}>
-                            <Button
-                              style={{
-                                backgroundColor: "#EDF9F1",
-                                color: "#47C278",
-                                borderRadius: " 12px 12px",
-                                padding: "10px 45px",
-                                fontSize: "18px",
-                                marginTop: "60px",
-                                textTransform: "capitalize",
-                                lineHeight:"40px",
-                                fontWeight:700
-                              }}
-                              type="submit"
-                              variant="outlined"
-                              fullWidth
-                              size="medium"
-                            >
-                              View Package Activated
-                            </Button>
-                          </Grid>
-                          
-                        </Grid>
+                        <Paper
+                            style={{
+                              boxShadow: "none",
+                              color: "#47C278",
+                              borderRadius: "50px 50px",
+                              border: " 2px solid #47C278",
+                              margin: "0px 47px",
+                              fontSize: "15px",
+                            }}
+                            className={classes.paper}
+                          >
+                            30 days
+                          </Paper>
+                          <Paper
+                            style={{
+                              boxShadow: "none",
+                              color: "#47C278",
+                              borderRadius: "50px 50px",
+                              border: " 2px solid #47C278",
+                              margin: "0px 47px",
+                              fontSize: "15px",
+                            }}
+                            className={classes.paper}
+                          >
+                            90 days
+                          </Paper>
+                          <Paper
+                            style={{
+                              boxShadow: "none",
+                              color: "#47C278",
+                              borderRadius: "50px 50px",
+                              border: " 2px solid #47C278",
+                              margin: "0px 47px",
+                              fontSize: "15px",
+                            }}
+                            className={classes.paper}
+                          >
+                            180 days
+                          </Paper>
+                          <Paper
+                            style={{
+                              boxShadow: "none",
+                              color: "#47C278",
+                              borderRadius: "50px 50px",
+                              border: " 2px solid #47C278",
+                              margin: "0px 47px",
+                              fontSize: "15px",
+                            }}
+                            className={classes.paper}
+                          >
+                            365 days
+                          </Paper>
+                     
+                        
                       </Card>
                     </Grid>
                   </Grid>
@@ -311,4 +334,4 @@ const CoinPakageSuccess = () => {
   );
 };
 
-export default CoinPakageSuccess;
+export default CoiningPackageDuration;
