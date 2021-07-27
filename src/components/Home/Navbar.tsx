@@ -45,8 +45,8 @@ import CoiningPackageCountdownFinish from '../Coining/CoiningPackageCountdownFin
 import CoiningPackageDurationFinish from '../Coining/CoiningPackageDurationFinish';
 import CoinPakageClaimSuccess from '../Coining/CoinPakageClaimSuccess';
 import CoinPakageSuccess from '../Coining/CoinPakageSuccess';
-import CoinPakageClaim from '../Coining/CoinPakageClaim';
 import CoiningPackageRetirementWallet from '../Coining/CoiningPackageRetirementWallet';
+import CoinPakageClaim from '../Coining/CoinPakageClaim';
 import CoiningPackageDuration from '../Coining/CoiningPackageDuration';
 import CoiningPackageDuration1 from '../Coining/CoiningPackageDuration1';
 import SwapConfirmed from '../Swap/SwapConfirmed';
@@ -81,41 +81,55 @@ export default function ButtonAppBar() {
                 <div className="typo">
                     <AppBar position="static" style={{ backgroundColor: "#ffffff", color: "black" }}>
                         <Toolbar>
-                            <Grid lg={4}>
-                                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                                    <img src="/logo.png" alt="logo" />
-                                </IconButton>
-                            </Grid>
-                            <Typography className={classes.title} style={{ fontSize: "14px" }}>
-                                <Link className="id" to="/Home"><ListItem button key={'Home'}><ListItemText primary={'What is USxD?'} style={{ color: "#122a4d", fontSize: "20px" }} /></ListItem >
-                                </Link>
-                            </Typography>
+                            <Grid  spacing={4} container>
+                                <Grid item lg={4} style={{textAlign:"right", paddingRight:"8%" }}>
+                                    <IconButton edge="start"  className={classes.menuButton} color="inherit" aria-label="menu">
+                                        <img src="/logo.png" alt="logo" />
+                                    </IconButton>
+                                </Grid>  
+                                <Grid item style={{alignSelf:"center"}}>
+                                    <Typography className={classes.title} style={{ fontSize: "14px" }}>
+                                        <Link className="id" to="/Home"><ListItem button key={'Home'}><ListItemText primary={'What is USxD?'} style={{ color: "#122a4d", fontSize: "20px" }} /></ListItem >
+                                        </Link>
+                                    </Typography>
+                                </Grid>
 
-                            <Typography className={classes.title} style={{ fontSize: "14px" }}>
-                                <Link className="id" to="/Memberships">
-                                    <ListItem button key={'Memberships'}>
-                                        <ListItemText primary={'Features of USxD'} style={{ color: "#122a4d", textDecoration: "nome" }} />
-                                    </ListItem>
-                                </Link>
-                            </Typography>
-                            <Typography className={classes.title} style={{ fontSize: "14px" }}>
-                                <Link className="id" to="/Register">
-                                    <ListItem button key={'Activity'}>
-                                        <ListItemText primary={'Coining Package'} style={{ color: "#122a4d" }} />
-                                    </ListItem>
-                                </Link>
-                            </Typography>
-                            <Typography className={classes.title} style={{ fontSize: "14px" }}>
-                                <Link className="id" to="/Login">
-                                    <ListItem button key={' Engage'}>
-                                        <ListItemText primary={'Network Building'} style={{ color: "#122a4d" }} />
-                                    </ListItem>
-                                </Link>
-                            </Typography>
-                            <Button variant="contained" color="primary" style={{ backgroundColor: "#47C278", borderRadius: "12px" }}>Launch App</Button>
-                            <Button className={classes.menuButton} style={{ paddingLeft: "10px" }}>
-                                <img src="/Vector.png" alt="Vector" style={{ backgroundColor: "blue", padding: "1px", borderRadius: "9px" }} />
-                            </Button>
+                                <Grid item className="grid">
+                                    <Typography className={classes.title} style={{ fontSize: "14px" }}>
+                                        <Link className="id" to="/Memberships">
+                                            <ListItem button key={'Memberships'}>
+                                                <ListItemText primary={'Features of USxD'} style={{ color: "#122a4d", textDecoration: "nome" }} />
+                                            </ListItem>
+                                        </Link>
+                                    </Typography>
+                                </Grid>
+                                <Grid item className="grid">
+                                    <Typography className={classes.title} style={{ fontSize: "14px" }}>
+                                        <Link className="id" to="/Register">
+                                            <ListItem button key={'Activity'}>
+                                                <ListItemText primary={'Coining Package'} style={{ color: "#122a4d" }} />
+                                            </ListItem>
+                                        </Link>
+                                    </Typography>
+                                </Grid>
+                                <Grid item className="grid">
+                                    <Typography className={classes.title} style={{ fontSize: "14px" }}>
+                                        <Link className="id" to="/Login">
+                                            <ListItem button key={' Engage'}>
+                                                <ListItemText primary={'Network Building'} style={{ color: "#122a4d" }} />
+                                            </ListItem>
+                                        </Link>
+                                    </Typography>
+                                </Grid>
+                                <Grid item className="grid">
+                                    <Button variant="contained" color="primary" style={{ backgroundColor: "#47C278", borderRadius: "12px",padding:"12px 16px", fontSize:"16px", fontWeight:700, lineHeight:"24px" }}>Launch App </Button>
+                                </Grid>
+                                <Grid item className="grid" style={{ paddingLeft: "0px" }}>
+                                    <Button className={classes.menuButton} >
+                                        <img src="/Vector.png" alt="Vector"  />
+                                    </Button>
+                                </Grid>
+                            </Grid>
 
                         </Toolbar>
                     </AppBar>

@@ -59,10 +59,11 @@ const RegisterConnectWallet = () => {
             <Container>
                 <h1>Register</h1>
                 <div >
-                    <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                            <Card className="card" raised={true} style={{ padding: "45px", borderRadius: "30px" }}>
-                            <CardActionArea>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6}>
+                        <Card className="card" raised={true} style={{ padding:"45px", borderRadius: "30px"  }}>
+                            <Grid>
+                                <CardActionArea>
                                     <div style={{ textAlign: "left", padding: "15px" }}>
                                         <h1> Checklist before registration</h1>
                                         <p >1.Create a cruptocurrency wallet on the Smart Chain. Recommended wallets: Metamask, Tokenpocket,Trust.</p>
@@ -102,25 +103,26 @@ const RegisterConnectWallet = () => {
                                     <Grid >
                                     </Grid>
                                 </Grid>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Card className="card" raised={true} style={{ padding: "45px", borderRadius: "30px" }}>
-                                <CardActionArea>
-                                    <CardContent>
-                                        <h1> View account</h1>
-                                    </CardContent>
-                                </CardActionArea>
-                                <TextField
-                                    margin="normal"
-                                    variant="outlined"
-                                    label="ID Wallet address"
-                                    required
-                                    fullWidth
-                                    name="name"
-                                    autoComplete="name"
-                                />
-                                <Button
+                            </Grid>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <Card className="card" raised={true} style={{ padding:"45px", borderRadius: "30px"  }}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <h1> View account</h1>
+                                </CardContent>
+                            </CardActionArea>
+                            <TextField
+                                margin="normal"
+                                variant="outlined"
+                                label="ID Wallet address"
+                                required
+                                fullWidth
+                                name="name"
+                                autoComplete="name"
+                            />
+                            <Button
                                     style={{
                                         color: "black", borderRadius: " 12px 12px", padding: "10px 95px",
                                         fontSize: "16px", textTransform: "capitalize"

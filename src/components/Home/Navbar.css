@@ -18,3 +18,19 @@
     color: rgba(0, 0, 0, 0.54);
     
 }
+.typo Link{
+  font-family: SVN-Gilroy;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+Grid Typography {
+  justify-self: center;
+}
+/* 122a4d */
+.grid {
+  align-self: center
+}
