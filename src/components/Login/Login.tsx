@@ -18,10 +18,10 @@ const Login = () => {
         <div>
             <Container>
             <h1>Login</h1>
-                <div >
+                <div>
                 <Grid container spacing={3}>
-                    <Grid item xs={6}>
-                        <Card className="card" raised={true} style={{ padding:"10px", borderRadius: "30px"  }}>
+                    <Grid item xs={12} sm={6}>
+                        <Card className="card"  style={{ padding:"10px", borderRadius: "30px" , border:"1px #c4c4c4a3 solid" }}>
                             <CardActionArea>
 
                                 <h1> Login to Personad USxB</h1>
@@ -43,8 +43,9 @@ const Login = () => {
                                     Connect a Wallet
                                 </Button>
                             </Grid>
+                            <hr />
                             <Grid container className="link">
-                                <Grid item container justify="center">
+                                <Grid item  justify="center">
 
 
                                     <Link href="" variant="body2">
@@ -52,7 +53,7 @@ const Login = () => {
                                     </Link>
 
                                 </Grid>
-                                <Grid >
+                                <Grid item style={{textAlign:"right"}}>
                                     <Link href="" variant="body2">
                                         {"Don't have an account? "}
                                     </Link>
@@ -61,7 +62,7 @@ const Login = () => {
                             </Grid>
                         </Card>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <Card className="card" raised={true} style={{ padding:"17px", borderRadius: "30px"  }}>
                             <CardActionArea>
 

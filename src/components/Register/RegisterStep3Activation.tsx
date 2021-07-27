@@ -23,7 +23,7 @@ const RegisterStep3Activation = () => {
 
                 <div style={{ marginTop: "50px" }} >
                     <Grid container spacing={3}>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} sm={6}>
                             <Card className="card" raised={true} style={{ padding: "10px", borderRadius: "30px" }}>
                                 <CardActionArea>
                                     <div style={{ padding: "15px" }}>
@@ -69,7 +69,7 @@ const RegisterStep3Activation = () => {
                                 </Grid>
                             </Card>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} sm={6}>
                             <Card className="card" raised={true} style={{ padding: "17px", borderRadius: "30px" }}>
                                 <CardActionArea>
 

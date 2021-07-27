@@ -58,9 +58,9 @@ const RegisterConnectWalletagree = () => {
         <div>
             <Container>
             <h1>Login</h1>
-                <div >
+                <div>
                 <Grid container spacing={3}>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <Card className="card" raised={true} style={{ padding:"45px", borderRadius: "30px"  }}>
                             <CardActionArea>
                                 <h1> Login to Personad USxB</h1>
@@ -94,7 +94,7 @@ const RegisterConnectWalletagree = () => {
                             </Grid>
                         </Card>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <Card className="card" raised={true} style={{ padding:"45px", borderRadius: "30px"  }}>
                             <CardActionArea>
                                 <CardContent>

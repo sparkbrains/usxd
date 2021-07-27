@@ -85,9 +85,9 @@ const Registerstep2 = () => {
         <div>
             <Container>
                 <h1>Register</h1>
-                <div >
+                <div>
                     <Grid container spacing={3}>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} sm={6}>
                             <Card className="card" raised={true} style={{ padding: "10px", borderRadius: "30px" }}>
                                 <CardActionArea>
                                     <div style={{ textAlign: "left", padding: "15px" }}>
@@ -131,7 +131,7 @@ const Registerstep2 = () => {
                                 </Grid>
                             </Card>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} sm={6}>
                             <div className={classes.root}>
                                 <Stepper activeStep={activeStep}>
                                     {steps.map((label, index) => {
