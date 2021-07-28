@@ -54,8 +54,83 @@ CardContent Typography{
     letter-spacing: 0em;
     text-align: center;
 }
-@media only screen and (max-width: 600px) {
-    body {
-      background-color: #ffff;
-    }
+.main-head{
+    position: relative;
+    text-align: left;
+    line-height: 104px;
+    font-size: 96px;
+    color:"#191D24"
+    
+    
 }
+.section-1{
+    position:"absolute";
+    width:100%;
+    max-width:min-content;
+    top:477px;
+    left:344px;
+}
+.section_2 {
+    position: absolute;
+    width:"100%";
+    max-width:"min-content";
+    top:"115%";
+    left:"42%"
+}
+.title{
+    font-size:96px;
+    text-align: left;
+    line-height: 104px;
+    position: relative;
+    color: #191D24;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* .section-1{
+        position:"absolute";
+        width:100%;
+        max-width:min-content;
+        top:444px;
+        left:4px;
+    } */
+    .section-1 {
+        top: 717px;
+        left: 11px;
+    }
+    .title{
+        font-size:69px;
+        text-align: left;
+        line-height: 104px;
+        position: relative;
+        color: #191D24;
+    }
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .example {background: green;}
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .section-1 {
+        top: 665px;
+        left: 57px;
+    }
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .section-1 {
+        top: 476px;
+        left: 314px;
+    }
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .example {background: pink;}
+  }

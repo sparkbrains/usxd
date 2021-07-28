@@ -49,26 +49,27 @@ export default function Footer() {
             style={{ display: "flex", textAlign: "left" }}
             className="footer"
           >
-            <Grid item xs={6} sm={12}>
+            <Grid container>
+            <Grid item xs={12} sm={3}>
               <p>About us</p>
               <p>Road Map</p>
               <p>Community</p>
             </Grid>
 
-            <Grid item xs={6} sm={12}>
+            <Grid item xs={12} sm={3}>
               <p>Exchange</p>
               <p>Investment Pakages</p>
               <p>Referral Program</p>
             </Grid>
 
-            <Grid item xs={6} sm={12}>
+            <Grid item xs={12} sm={3}>
               <p>Terms of Use</p>
               <p>Private Policy</p>
               <p>Cookie Notice</p>
               <p>White Paper</p>
             </Grid>
 
-            <Grid item xs={6} sm={12}>
+            <Grid item xs={12} sm={3}>
               <p>Get Notification</p>
               <p>
                 <Paper
@@ -106,6 +107,7 @@ export default function Footer() {
                   </Grid>
                 </Grid>
               </p>
+            </Grid>
             </Grid>
           </div>
         </Container>

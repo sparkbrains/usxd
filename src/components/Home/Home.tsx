@@ -11,10 +11,9 @@ import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-
-
-
-
+import React from 'react';
+import CardMedia from '@material-ui/core/CardMedia';
+import { red } from '@material-ui/core/colors';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -36,6 +35,24 @@ const useStyles = makeStyles((theme: Theme) =>
     divider: {
       margin: theme.spacing(2, 0),
     },
+    
+      media: {
+        height: 0,
+        paddingTop: '80%', // 16:9
+      },
+      expand: {
+        transform: 'rotate(0deg)',
+        marginLeft: 'auto',
+        transition: theme.transitions.create('transform', {
+          duration: theme.transitions.duration.shortest,
+        }),
+      },
+      expandOpen: {
+        transform: 'rotate(180deg)',
+      },
+      avatar: {
+        backgroundColor: red[500],
+      },
   }),
 );
 
@@ -47,7 +64,11 @@ const Home = () => {
         document.title = "Home"
     }, [])
 
+    const [expanded, setExpanded] = React.useState(false);
 
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
     return (
         
 
@@ -55,11 +76,11 @@ const Home = () => {
             <div className={classes.root} style={{ backgroundImage: "url(/section1-blur-bg.png)",paddingTop:"100px",backgroundRepeat: 'no-repeat' }}>
                 <Container maxWidth="lg" >
                     <Grid container spacing={5}>
-                        <Grid item xs={12} sm={6} style={{alignSelf:"center"}}>
-                            <Typography style={{textAlign:"left", lineHeight:"104px", fontSize:"96px", color:"#191D24" , position:"relative"}}> Create in Decentralized Economy</Typography>
+                        <Grid item xs={12} sm={6} md={6} lg={6} style={{alignSelf:"center"}}>
+                            <p className="title"> Create in Decentralized Economy</p>
                             <Typography variant="subtitle1" color="textSecondary" className="maincontent">
    
-                                <img src="/section1-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute", width:"100%",maxWidth:"min-content",top:"446px",left:"344px"}} />
+                                <img src="/section1-title-line.png" alt="currencyimg" width="100%" className="section-1" style={{position:"absolute"}} />
                                 <p style={{paddingTop:"40px"}}>
                                     Our partners will launch later also ATM, POS, Visa and
                                     Mastercard, NFC p2p wallet, which will allow USxD to enter the
@@ -75,102 +96,124 @@ const Home = () => {
                 </Container>
 
                 <Container style={{paddingTop:"140px"}}>    
-                    <p style={{  padding:"0px 82px",fontWeight:700, fontSize: "60px",lineHeight:"84px", color: "#191D24", position:"relative"}}> Features of Dexconomy Platform and USxd Stablecoin</p>
-                    {/* <img src="/section1-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",top:"115%",left:"42%"}} /> */}
+                    
 
                         
-                    <div style={{ display: "flex", marginTop: "30px", }}>
+                    <div>
                         <Grid container spacing={3}>
-                        <Grid item xs={4}>
-                            <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
-                                <CardActionArea>
-                                    <img src="/section2-currency.png" alt="currencyimg" height="140" />
-                                    <CardContent>
+                            <Typography style={{  padding:"0px 82px",fontWeight:700, fontSize: "60px",lineHeight:"84px", color: "#191D24", position:"relative"}}> Features of Dexconomy Platform and USxd Stablecoin</Typography>
+                            <Typography className="section_2">
+                                
+                                <img src="/section1-title-line.png" alt="currencyimg" width="100%" className="section-2" style={{position:"absolute"}} />
+                            </Typography>
 
-                                        <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                        <Grid item xs={12} sm={4}>
+                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                            <Card className={classes.root}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image="/section2-currency.png"
+                                    title="Paella dish"
+                                    
+                                />
+                                <CardContent>
+                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px", color:"#191D24"}}>
                                             Issuing Visa, Mastercard can withdraw Global payment method Touchless payments with NFC
                                             money at ATMs. The system will
                                             automatically convert from USxD to Fiat
                                         </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-
+                                </CardContent>
                             </Card>
+                            </Box>
                         </Grid>
-                        <Grid item xs={4}>
-                            <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
-                                <CardActionArea>
-                                    <img src="/section2-global.png" alt="globalimg" height="140" />
-                                    <CardContent>
-
-                                        <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                        <Grid item xs={12} sm={4}>
+                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                            <Card className={classes.root}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image="/section2-global.png"
+                                    title="Paella dish"
+                                    
+                                />
+                                <CardContent>
+                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
                                             Global payment method
                                         </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-
+                                </CardContent>
                             </Card>
+                            </Box>
                         </Grid>
-                        <Grid item xs={4}>
-                            <Card className="card" style={{ height: "100%" ,boxShadow:"none"  }}>
-                                <CardActionArea>
-                                    <img src="/section2-nfc.png" alt="nfcimg" height="140" />
-                                    <CardContent>
-
-                                        <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
-                                            Touchless payments with NFC
+                        <Grid item xs={12} sm={4}>
+                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                            <Card className={classes.root}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image="/section2-nfc.png"
+                                    title="Paella dish"
+                                    
+                                />
+                                <CardContent>
+                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                            GTouchless payments with NFC
                                         </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-
+                                </CardContent>
                             </Card>
+                            </Box>
                         </Grid>
                         </Grid>
                     </div>
                     <div style={{ display: "flex", marginTop: "50px" }}>
                         <Grid container spacing={3}>
-                        <Grid item xs={4}>
-                            <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
-                                <CardActionArea>
-                                    <img src="/section2-wallet.png" alt="walletimg" height="140" />
-                                    <CardContent>
-
-                                        <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
-                                            p2p wallet
+                        <Grid item xs={12} sm={4}>
+                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                            <Card className={classes.root}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image="/section2-wallet.png"
+                                    title="Paella dish"
+                                    
+                                />
+                                <CardContent>
+                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                p2p wallet
                                         </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-
+                                </CardContent>
                             </Card>
+                            </Box>
                         </Grid>
-                        <Grid item xs={4}>
-                            <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
-                                <CardActionArea>
-                                    <img src="/section2-package.png" alt="packageiimg" height="140" />
-                                    <CardContent>
-
-                                        <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
-                                            Activate packages to earn daily, monthly and yearly
+                        <Grid item xs={12} sm={4}>
+                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                            <Card className={classes.root}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image="/section2-package.png"
+                                    title="Paella dish"
+                                    
+                                />
+                                <CardContent>
+                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                Activate packages to earn daily, monthly and yearly
                                         </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-
+                                </CardContent>
                             </Card>
+                            </Box>
                         </Grid>
-                        <Grid item xs={4}>
-                            <Card className="card" style={{ height: "100%" , boxShadow:"none" }}>
-                                <CardActionArea>
-                                    <img src="/section3-network-3.png" alt="networkimg" height="140" />
-                                    <CardContent>
-
-                                        <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
-                                            Multi-Level Network Building,with 8 levels
-
+                        <Grid item xs={12} sm={4}>
+                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                            <Card className={classes.root}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image="/section2-network.png"
+                                    title="Paella dish"
+                                    
+                                />
+                                <CardContent>
+                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                Multi-Level Network Building,with 8 levels
                                         </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-
+                                </CardContent>
                             </Card>
+                            </Box>
                         </Grid>
                         </Grid>
                     </div>
@@ -180,17 +223,19 @@ const Home = () => {
 
             <div style={{ backgroundImage: "url()",paddingTop:"140px",backgroundRepeat: 'no-repeat' }}>
                 <Container>  
+                    <div style={{paddingBottom:"40px"}}>
                     <h1 style={{ fontSize: "50px", color: "black", position:"relative",marginBottom:"0px" }}>Coining Package</h1>
-                    <img src="/section3-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",left:"39%"}} />
+                    <img src="/section3-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",left:"39%", paddingBottom:"10px"}} />
+                    </div>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
                             <img src="/section2-package.png" alt="packageimg" width="100%" />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                        <Paper style={{borderRadius:"20px"}}>
+                        <Paper style={{borderRadius:"20px"}} >
                             <Typography variant="subtitle1" color="textSecondary">
                                 
-                                <div style={{padding:"20px"}}>
+                                <Box style={{padding:"20px", borderRadius:"24px"}} boxShadow={3}>
                                     <Typography variant="subtitle1" gutterBottom>
                                         <h2 style={{ textAlign: "left", fontSize: "40px", color: "black", lineHeight: "0px" }}> 500 BUSD<span style={{fontSize:"20px"}}>/Pakage</span></h2>
                                     </Typography>
@@ -237,7 +282,7 @@ const Home = () => {
                                     borderRadius:"12px", backgroundColor:"#47C278", fontSize:"16px",lineHeight:"24px"}}>Authorize BUSD</Button>
                                     
                                     
-                                </div>
+                                </Box>
                                 </Typography>
                             </Paper>    
                         </Grid>
@@ -250,8 +295,8 @@ const Home = () => {
                 <Container> 
                     <h1 style={{ fontSize: "60px",lineHeight:"84px", letterSpacing:"0em",fontWeight:700, color: "black" }}>Network Building</h1>
                     <p style={{ marginTop: "50px" }}>Get access to thousands of partners and exponential profits from infinite referrals</p>
-                    <div style={{ display: "flex", marginTop: "50px",  textAlign:"left" }}>
-                        <Grid item xs={4}>
+                    <Grid container style={{ display: "flex", marginTop: "50px",  textAlign:"left" }}>
+                        <Grid item xs={12} sm={4}>
                             <Card className="card" style={{ padding:"10px", boxShadow:"none" }}>
                                 <CardActionArea>
                                     <img src="/section3-network-3.png" alt="package" height="140" />
@@ -268,7 +313,7 @@ const Home = () => {
                                 </Button>
                             </Card>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4}>
                             <Card className="card"style={{ padding:"10px", boxShadow:"none"  }}>
                                 <CardActionArea>
                                     <img src="/section3-network-2.png" alt="nice" height="140" />.
@@ -286,7 +331,7 @@ const Home = () => {
                                 </Button>
                             </Card>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4}>
                             <Card className="card" style={{ padding:"10px" , boxShadow:"none" }}>
                                 <CardActionArea>
                                     <img src="/section3-network-3.png" alt="package" height="140" />
@@ -303,7 +348,7 @@ const Home = () => {
                                 </Button>
                             </Card>
                         </Grid>
-                    </div>
+                    </Grid>
                 </Container>
             </div>
         </div>
