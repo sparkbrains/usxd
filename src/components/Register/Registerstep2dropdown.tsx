@@ -112,6 +112,7 @@ const Registerstep2dropdown = () => {
                                         type="submit"
                                         variant="outlined"
                                         fullWidth
+                                        href="/RegisterStepLoading"
                                         size="medium" color="primary">
                                         Read All About Registration
                                     </Button>
@@ -212,6 +213,7 @@ const Registerstep2dropdown = () => {
                                             className={classes.button}
                                             type="submit"
                                             fullWidth
+                                            
                                             size="medium">
                                             
                                             Authorize BUSD

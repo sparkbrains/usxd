@@ -114,6 +114,7 @@ const Registerstep2 = () => {
                                         type="submit"
                                         variant="outlined"
                                         fullWidth
+                                        href="/RegisterStepCheck"
                                         size="medium" color="primary">
                                         Read All About Registration
                                     </Button>
@@ -217,6 +218,7 @@ const Registerstep2 = () => {
                                             onClick={handleNext}
                                             className={classes.button}
                                             type="submit"
+                                           
                                             fullWidth
                                             size="medium">
                                             

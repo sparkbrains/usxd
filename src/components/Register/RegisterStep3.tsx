@@ -190,6 +190,7 @@ const RegisterStep3 = () => {
                                             className={classes.button}
                                             type="submit"
                                             fullWidth
+                                            href="/RegisterStep3Loading"
                                             size="medium">
                                             Register Now
                                         </Button>

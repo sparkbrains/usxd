@@ -114,6 +114,7 @@ const RegisterstepCheck = () => {
                                         type="submit"
                                         variant="outlined"
                                         fullWidth
+                                        href="/RegisterStep3"
                                         size="medium" color="primary">
                                         Read All About Registration
                                     </Button>
@@ -218,6 +219,7 @@ const RegisterstepCheck = () => {
                                             className={classes.button}
                                             type="submit"
                                             fullWidth
+                                           
                                             size="medium">
                                             
                                             Authorize BUSD

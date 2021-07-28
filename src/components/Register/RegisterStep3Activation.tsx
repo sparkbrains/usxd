@@ -93,6 +93,7 @@ const RegisterStep3Activation = () => {
                                     color="primary"
                                     type="submit"
                                     fullWidth
+                                    href="/RegisterStep3Activationdone"
                                     size="medium">
                                     Login To Your Account
                                 </Button>

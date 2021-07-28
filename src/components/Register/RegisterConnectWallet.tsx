@@ -86,6 +86,7 @@ const RegisterConnectWallet = () => {
                                         }}
                                         type="submit"
                                         variant="outlined"
+                                        href="/Registerstep2"
                                         fullWidth
                                         size="medium" color="primary">
                                         Connect a Wallet

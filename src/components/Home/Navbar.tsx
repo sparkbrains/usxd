@@ -52,6 +52,7 @@ import CoiningPackageDuration1 from '../Coining/CoiningPackageDuration1';
 import SwapConfirmed from '../Swap/SwapConfirmed';
 import Sidebar from './Sidebar';
 import SidebarFooter from './SidebarFooter';
+import CardTest from '../CardTest';
 
 
 
@@ -121,12 +122,22 @@ export default function ButtonAppBar() {
                                         </Link>
                                     </Typography>
                                 </Grid>
+                              
                                 <Grid item className="grid">
-                                    <Button variant="contained" color="primary" style={{ backgroundColor: "#47C278", borderRadius: "12px",padding:"12px 16px", fontSize:"16px", fontWeight:700, lineHeight:"24px" }}>Launch App </Button>
+                                    
+                                    <Typography className={classes.title} style={{ fontSize: "14px" }}>
+                                        <Link className="id" to="/Register">
+                                        <Button variant="contained" color="primary" style={{ backgroundColor: "#47C278", borderRadius: "12px",padding:"12px 16px", fontSize:"16px", fontWeight:700, lineHeight:"24px" }}>Launch App 
+                                                
+                                                </Button>
+                                        </Link>
+                                    </Typography>
                                 </Grid>
                                 <Grid item className="grid" style={{ paddingLeft: "0px" }}>
-                                    <Button className={classes.menuButton} >
-                                        <img src="/Vector.png" alt="Vector"  />
+                                    <Button className={classes.menuButton} href="/Login" >
+                                        <img src="/Vector.png" 
+                                        alt="Vector" />
+ 
                                     </Button>
                                 </Grid>
                             </Grid>
@@ -263,7 +274,10 @@ export default function ButtonAppBar() {
                 <Route path="/SidebarFooter">
                     <SidebarFooter />
                 </Route>
-
+                <Route path="/CardTest">
+                    <CardTest />
+                </Route>
+                
 
 
 

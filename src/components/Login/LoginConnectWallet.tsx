@@ -81,16 +81,21 @@ const LoginConnectWallet = () => {
                                     Connect a Wallet
                                 </Button>
                             </Grid>
-                            <Grid container className="link" style={{display:"inlineflex"}}>
-                                <Grid item container>
+                            <Grid container className="link">
+                                <Grid item sm={6}  >
+
+
                                     <Link href="" variant="body2">
-                                        {"Registration in USxD"}
-                                    </Link>
-                                    <Link href="" variant="body2" style={{textAlign:"right"}}>
                                         {"Don't have an account? "}
                                     </Link>
+
                                 </Grid>
-                                <Grid >
+                                <Grid item sm={6}>
+                                    <Link href="" variant="body2" style={{color:"#47C278"}}>
+                                        {"Registration in USxD"}
+                                        
+                                    </Link>
+
                                 </Grid>
                             </Grid>
                         </Card>
@@ -119,20 +124,19 @@ const LoginConnectWallet = () => {
                                     type="submit"
                                     fullWidth
                                     variant="outlined"
+                                    onClick={handleToggle}
                                     size="medium" color="primary">
                                    View
                                 </Button>
+                                
                         </Card>
                     </Grid>
                 </Grid>
                 </div>
 
                 <div>
-                    <Button variant="outlined" color="primary" onClick={handleToggle}>
-                        Show backdrop
-                    </Button>
+                  
                     <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
-                        {/* <CircularProgress color="inherit" /> */}
                         <div className={classes.root}>
                             <Container>
                             <Grid container spacing={3}>

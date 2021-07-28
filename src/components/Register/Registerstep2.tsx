@@ -112,6 +112,7 @@ const Registerstep2 = () => {
 
                                         type="submit"
                                         variant="outlined"
+                                        href="/Registerstep2dropdown"
                                         fullWidth
                                         size="medium" color="primary">
                                         Read All About Registration
