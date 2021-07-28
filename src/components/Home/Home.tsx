@@ -71,7 +71,6 @@ const Home = () => {
   };
     return (
         
-
         <div>
             <div className={classes.root} style={{ backgroundImage: "url(/section1-blur-bg.png)",paddingTop:"100px",backgroundRepeat: 'no-repeat' }}>
                 <Container maxWidth="lg" >
@@ -139,7 +138,12 @@ const Home = () => {
                                 <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
                                             Global payment method
                                         </Typography>
+<<<<<<< HEAD
                                 </CardContent>
+=======
+                                    </CardContent>
+                                </CardActionArea>
+>>>>>>> f1349dd2def1787c9d8ef92a791c79bdab9e00cc
                             </Card>
                             </Box>
                         </Grid>

@@ -115,14 +115,10 @@ const Register = () => {
                                 </Grid>
                                 <Grid container className="link">
                                     <Grid item container justify="center" style={{ marginTop: "20px", color: "#191D24" }}>
-
-
                                         <Link href="" variant="body2">
                                             {"Need help singing up? Write to us in support"}
                                         </Link>
-
                                     </Grid>
-
                                 </Grid>
                             </Card>
                         </Grid>
@@ -168,7 +164,7 @@ const Register = () => {
                                                 </p>
 
                                                 <p style={{ display: "inlineFlex" }}>
-                                                    <ErrorOutlineRounded style={{ paddingRight: "10px",verticalAlign: "middle" }} />
+                                                    <ErrorOutlineRounded style={{ paddingRight: "10px", verticalAlign: "middle" }} />
                                                     Make sure you choose the correct wallet for futher work with the platform
                                                 </p>
 
@@ -200,8 +196,6 @@ const Register = () => {
                 </div>
             </Container>
         </div>
-
-
     )
 };
 

@@ -153,6 +153,7 @@ const NetworkBuildingLicenceSuccess = () => {
         </Button>
         <Button
           variant="contained"
+          onClick={handleToggle}
           disabled
           style={{
             margin: "2px",
@@ -217,6 +218,7 @@ const NetworkBuildingLicenceSuccess = () => {
                 <Button
                   variant="contained"
                   fullWidth
+                  onClick={handleToggle}
                   color="primary"
                   style={{
                     textTransform: "capitalize",
@@ -250,6 +252,7 @@ const NetworkBuildingLicenceSuccess = () => {
                 <Button
                   variant="contained"
                   fullWidth
+                  onClick={handleToggle}
                   color="primary"
                   style={{
                     textTransform: "capitalize",
@@ -302,9 +305,7 @@ const NetworkBuildingLicenceSuccess = () => {
           </TableContainer>
 
           <div>
-            <Button variant="outlined" color="primary" onClick={handleToggle}>
-              Show backdrop
-            </Button>
+          
             <Backdrop
               className={classes.backdrop}
               open={open}

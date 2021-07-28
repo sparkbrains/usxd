@@ -46,7 +46,7 @@ const RegisterConnectWalletagree = () => {
 
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
-    setOpen(false);
+    setOpen(true);
   };
   const handleToggle = () => {
     setOpen(!open);
@@ -57,15 +57,25 @@ const RegisterConnectWalletagree = () => {
     return (
         <div>
             <Container>
-            <h1>Login</h1>
-                <div>
+            <h1>Register</h1>
+                <div >
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
                         <Card className="card" raised={true} style={{ padding:"45px", borderRadius: "30px"  }}>
-                            <CardActionArea>
-                                <h1> Login to Personad USxB</h1>
-                                <p>Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging</p>
-                            </CardActionArea>
+                        <CardActionArea>
+                                    <div style={{ textAlign: "left", padding: "15px" }}>
+                                        <h1> Checklist before registration</h1>
+                                        <p >1.Create a cruptocurrency wallet on the Smart Chain. Recommended wallets: Metamask, Tokenpocket,Trust.</p>
+                                        <p>2. Top up your wallet with at least:</p>
+                                        <p>.100 BUSD with ID address</p>
+                                        <p>.200 BUSD without ID address</p>
+                                        <p>It is recommended to buy cryptocurrency on Binance.com or use PancakeSwap.finance for exchange.</p>
+                                        <p>3. For mobile devices: make sure you are accessing the USxD website using the Dapp browser.</p>
+                                        <p> 4. For PC: go to the USxD website with the MetaMask extension installed.</p>
+
+                                        <p>5. Before completing the registration, check your referral address</p>
+                                    </div>
+                                </CardActionArea>
                             <Grid container justify="center">
                                 <Button
                                     style={{
@@ -117,6 +127,7 @@ const RegisterConnectWalletagree = () => {
                                     }}
                                     type="submit"
                                     fullWidth
+                                    onClick={handleToggle}
                                     variant="outlined"
                                     size="medium" color="primary">
                                    View
@@ -126,9 +137,7 @@ const RegisterConnectWalletagree = () => {
                 </Grid>
                 </div>
                 <div>
-                <Button variant="outlined" color="primary" onClick={handleToggle}>
-                    Show backdrop
-                </Button>
+                
                 <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
                     {/* <CircularProgress color="inherit" /> */}
                     <div className={classes.root}>

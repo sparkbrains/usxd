@@ -12,7 +12,6 @@ import Select from "@material-ui/core/Select";
 import { Settings, HelpOutlineOutlined, WatchLaterOutlined } from '@material-ui/icons';
 import Backdrop from "@material-ui/core/Backdrop";
 import { Close } from "@material-ui/icons";
-import {CheckCircleOutline} from '@material-ui/icons';
 import Card from "@material-ui/core/Card";
 
 
@@ -327,10 +326,16 @@ export default function SwapConfirmed() {
                           </Grid>
                           
                         </Grid>
-                        <h2>From</h2>
-                        <p>
+                        <h2 style={{float:"left"}}>From</h2>
+                        <p >
                         to
                         </p>
+                        <p>Output is estimated. If the price changes by more than 0.5% your transaction will revert.</p>
+                        <p style={{float:"left"}}>Price</p>
+                        <p style={{float:"right"}}>0.0030505 BNB per USxD</p>
+                        <Paper>
+                        <p style={{float:"left"}}>Price Impact</p>
+                        </Paper>
                         <Grid container spacing={3}>
                           <Grid item container xs={12}>
                             <Button
