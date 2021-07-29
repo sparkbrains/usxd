@@ -193,6 +193,7 @@ const  RegisterStep3Loading = () => {
                                             className={classes.button}
                                             type="submit"
                                             fullWidth
+                                            href="/RegisterStep3Check"
                                             size="medium">
                                             Register Now
                                         </Button>

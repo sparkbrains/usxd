@@ -179,6 +179,7 @@ const Register = () => {
                                             }}
                                             variant="contained"
                                             color="primary"
+                                            href="/RegisterConnectWallet"
                                             onClick={handleNext}
                                             className={classes.button}
                                             type="submit"
