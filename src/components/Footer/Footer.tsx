@@ -10,12 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      padding: "2px 4px",
-      display: "flex",
-      alignItems: "center",
-      width: 400,
-    },
+    
     input: {
       marginLeft: theme.spacing(1),
       flex: 1,
@@ -40,8 +35,7 @@ export default function Footer() {
           backgroundColor: "#29313C",
           color: "#ffff",
           paddingTop: "90px",
-          paddingBottom: "90px",
-          marginTop: "40px",
+          paddingBottom: "90px"
         }}
       >
         <Container maxWidth="lg">
@@ -70,12 +64,11 @@ export default function Footer() {
             </Grid>
 
             <Grid item xs={12} sm={3}>
-              <p>Get Notification</p>
+              <p className="get_notify">Get Notification</p>
               <p>
                 <Paper
                   component="form"
-                  className={classes.root}
-                  style={{ width: "250px" }}
+                  className="email_input"
                 >
                   <InputBase
                     className={classes.input}
@@ -113,18 +106,10 @@ export default function Footer() {
         </Container>
       </div>
       <div
-        style={{
-          backgroundColor: "#191E24",
-          color: "#ffff",
-          fontSize: "16px",
-          fontWeight: 600,
-          lineHeight: "24px",
-          padding: "10px 0px",
-        }}
-      >
-        <p>
-          USxD © 2021 • support@usxd.io • All rights reserved. Designed by
-          ftribe
+        
+      style={{marginTop:"0px"}}>
+        <p className="bottom_bar">
+        USxD © 2021 • support@usxd.io • All rights reserved. Designed by ftribe
         </p>
       </div>
     </React.Fragment>

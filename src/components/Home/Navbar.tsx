@@ -79,20 +79,20 @@ export default function ButtonAppBar() {
                         <Toolbar>
                             <Grid  spacing={4} container>
                                 <Grid item lg={4} style={{textAlign:"right", paddingRight:"8%" }}>
-                                    <IconButton edge="start"  className={classes.menuButton} color="inherit" aria-label="menu">
-                                        <img src="/logo.png" alt="logo" />
+                                    <IconButton edge="start"  className={classes.menuButton} color="inherit" aria-label="menu" href="/home">
+                                        <img src="/logo.png" alt="logo"  />
                                     </IconButton>
                                 </Grid>  
                                 <Grid item style={{alignSelf:"center"}}>
                                     <Typography className={classes.title} style={{ fontSize: "14px" }}>
-                                        <Link className="id" to="/Home"><ListItem button key={'Home'}><ListItemText primary={'What is USxD?'} style={{ color: "#122a4d", fontSize: "20px" }} /></ListItem >
+                                        <Link className="id" to=""><ListItem button key={'Home'}><ListItemText primary={'What is USxD?'} style={{ color: "#122a4d", fontSize: "20px" }} /></ListItem >
                                         </Link>
                                     </Typography>
                                 </Grid>
 
                                 <Grid item className="grid">
                                     <Typography className={classes.title} style={{ fontSize: "14px" }}>
-                                        <Link className="id" to="/Memberships">
+                                        <Link className="id" to="/">
                                             <ListItem button key={'Memberships'}>
                                                 <ListItemText primary={'Features of USxD'} style={{ color: "#122a4d", textDecoration: "nome" }} />
                                             </ListItem>
@@ -101,7 +101,7 @@ export default function ButtonAppBar() {
                                 </Grid>
                                 <Grid item className="grid">
                                     <Typography className={classes.title} style={{ fontSize: "14px" }}>
-                                        <Link className="id" to="/Register">
+                                        <Link className="id" to="">
                                             <ListItem button key={'Activity'}>
                                                 <ListItemText primary={'Coining Package'} style={{ color: "#122a4d" }} />
                                             </ListItem>
@@ -110,7 +110,7 @@ export default function ButtonAppBar() {
                                 </Grid>
                                 <Grid item className="grid">
                                     <Typography className={classes.title} style={{ fontSize: "14px" }}>
-                                        <Link className="id" to="/Login">
+                                        <Link className="id" to="">
                                             <ListItem button key={' Engage'}>
                                                 <ListItemText primary={'Network Building'} style={{ color: "#122a4d" }} />
                                             </ListItem>

@@ -14,8 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import { ErrorOutlineRounded } from '@material-ui/icons';
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-
-
+import './Register.css'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -78,13 +77,10 @@ const  RegisterStep3Loading = () => {
         setSkipped(newSkipped);
     };
 
-
-
-
     return (
         <div>
             <Container>
-                <h1>Register</h1>
+                <h2 className="title">Register</h2>
                 <div >
                     <Grid container spacing={3}>
                         <Grid item xs={12} sm={6}>

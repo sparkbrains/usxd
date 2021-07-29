@@ -14,6 +14,7 @@ import Box from '@material-ui/core/Box';
 import React from 'react';
 import CardMedia from '@material-ui/core/CardMedia';
 import { red } from '@material-ui/core/colors';
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       padding: theme.spacing(1),
       textAlign: 'center',
-      color: theme.palette.text.secondary,
+      color: ' #191D24',
       whiteSpace: 'nowrap',
       marginBottom: theme.spacing(1),
     },
@@ -71,16 +72,19 @@ const Home = () => {
 //   };
     return (
         
-        <div>
+        <div className="body">
             <div className={classes.root} style={{ backgroundImage: "url(/section1-blur-bg.png)",paddingTop:"100px",backgroundRepeat: 'no-repeat' }}>
                 <Container maxWidth="lg" >
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={6} md={6} lg={6} style={{alignSelf:"center"}}>
-                            <p className="title"> Create in Decentralized Economy</p>
+                            <div style={{position:'relative'}}>
+                            <p className="title_home"> Create in Decentralized Economy</p>
+                            <img src="/section1-title-line.png" alt="currencyimg" width="100%" className="section-1" />
+                            </div>
                             <Typography variant="subtitle1" color="textSecondary" className="maincontent">
    
-                                <img src="/section1-title-line.png" alt="currencyimg" width="100%" className="section-1" style={{position:"absolute"}} />
-                                <p style={{paddingTop:"40px"}}>
+                                
+                                <p style={{paddingTop:"40px", color: "#6D7F9C"}}>
                                     Our partners will launch later also ATM, POS, Visa and
                                     Mastercard, NFC p2p wallet, which will allow USxD to enter the
                                     real economy. They want to create a network of merchants that
@@ -94,20 +98,19 @@ const Home = () => {
                     </Grid>
                 </Container>
 
-                <Container style={{paddingTop:"140px"}}>    
-                    
-
-                        
+                <Container style={{paddingTop:"140px",textAlign:"center"}}>         
                     <div>
-                        <Grid container spacing={3}>
-                            <Typography style={{  padding:"0px 82px",fontWeight:700, fontSize: "60px",lineHeight:"84px", color: "#191D24", position:"relative"}}> Features of Dexconomy Platform and USxd Stablecoin</Typography>
+                        <Grid container spacing={3} style={{position:"relative"}}>
+                            <p className="features_sec"> Features of Dexconomy Platform and USxd Stablecoin</p>
+                            <img src="/section1-title-line.png" alt="currencyimg" width="100%" className="section-2" style={{position:"absolute"}} />
                             <Typography className="section_2">
                                 
-                                <img src="/section1-title-line.png" alt="currencyimg" width="100%" className="section-2" style={{position:"absolute"}} />
+                                
                             </Typography>
 
-                        <Grid item xs={12} sm={4}>
-                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                        <Grid item xs={12} sm={4} >
+                            <Box  bgcolor="background.paper" height="100%"  >
+                            <div className="box">
                             <Card className={classes.root}>
                                 <CardMedia
                                     className={classes.media}
@@ -116,17 +119,17 @@ const Home = () => {
                                     
                                 />
                                 <CardContent>
-                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px", color:"#191D24"}}>
-                                            Issuing Visa, Mastercard can withdraw Global payment method Touchless payments with NFC
-                                            money at ATMs. The system will
-                                            automatically convert from USxD to Fiat
+                                <Typography component="p" style={{fontSize:"18px", lineHeight:"28px", color:"#191D24"}}>
+                                Issuing Visa, Mastercard can withdraw money at ATMs. The system will automatically convert from USxD to Fiat
                                         </Typography>
                                 </CardContent>
                             </Card>
+                            </div>
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                            <Box  bgcolor="background.paper" height="100%"  >
+                            <div  className="box">
                             <Card className={classes.root}>
                                 <CardMedia
                                     className={classes.media}
@@ -135,15 +138,17 @@ const Home = () => {
                                     
                                 />
                                 <CardContent>
-                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                <Typography component="p" style={{fontSize:"18px", lineHeight:"28px"}}>
                                             Global payment method
                                         </Typography>
                                 </CardContent>
                             </Card>
+                            </div>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                        <Grid item xs={12} sm={4} >
+                            <Box  bgcolor="background.paper" height="100%"  >
+                            <div className="box">
                             <Card className={classes.root}>
                                 <CardMedia
                                     className={classes.media}
@@ -152,19 +157,21 @@ const Home = () => {
                                     
                                 />
                                 <CardContent>
-                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                <Typography component="p" style={{fontSize:"18px", lineHeight:"28px"}}>
                                             GTouchless payments with NFC
                                         </Typography>
                                 </CardContent>
                             </Card>
+                            </div>
                             </Box>
                         </Grid>
                         </Grid>
                     </div>
                     <div style={{ display: "flex", marginTop: "50px" }}>
                         <Grid container spacing={3}>
-                        <Grid item xs={12} sm={4}>
-                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                        <Grid item xs={12} sm={4} >
+                            <Box  bgcolor="background.paper" height="100%"  >
+                            <div className="box">
                             <Card className={classes.root}>
                                 <CardMedia
                                     className={classes.media}
@@ -173,15 +180,17 @@ const Home = () => {
                                     
                                 />
                                 <CardContent>
-                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                <Typography component="p" style={{fontSize:"18px", lineHeight:"28px"}}>
                                 p2p wallet
                                         </Typography>
                                 </CardContent>
                             </Card>
+                            </div>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                        <Grid item xs={12} sm={4} >
+                            <Box  bgcolor="background.paper" height="100%"  >
+                            <div className="box">
                             <Card className={classes.root}>
                                 <CardMedia
                                     className={classes.media}
@@ -190,15 +199,17 @@ const Home = () => {
                                     
                                 />
                                 <CardContent>
-                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                <Typography component="p" style={{fontSize:"18px", lineHeight:"28px"}}>
                                 Activate packages to earn daily, monthly and yearly
                                         </Typography>
                                 </CardContent>
                             </Card>
+                            </div>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Box boxShadow={3} borderRadius={16} bgcolor="background.paper" height="100%" m={1} p={1} >
+                        <Grid item xs={12} sm={4} >
+                            <Box  bgcolor="background.paper" height="100%"  >
+                            <div className="box">
                             <Card className={classes.root}>
                                 <CardMedia
                                     className={classes.media}
@@ -207,11 +218,12 @@ const Home = () => {
                                     
                                 />
                                 <CardContent>
-                                <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
+                                <Typography component="p" style={{fontSize:"18px", lineHeight:"28px"}}>
                                 Multi-Level Network Building,with 8 levels
                                         </Typography>
                                 </CardContent>
                             </Card>
+                            </div>
                             </Box>
                         </Grid>
                         </Grid>
@@ -223,8 +235,8 @@ const Home = () => {
             <div style={{ backgroundImage: "url()",paddingTop:"140px",backgroundRepeat: 'no-repeat' }}>
                 <Container>  
                     <div style={{paddingBottom:"40px"}}>
-                    <h1 style={{ fontSize: "50px", color: "black", position:"relative",marginBottom:"0px" }}>Coining Package</h1>
-                    <img src="/section3-title-line.png" alt="currencyimg" width="100%" style={{position:"absolute",width:"100%",maxWidth:"min-content",left:"39%", paddingBottom:"10px"}} />
+                    <h1 style={{ fontSize: "50px", color: "black", position:"relative",marginBottom:"0px",textAlign:"center" }}>Coining Package</h1>
+                    <img src="/section3-title-line.png" className="section-3" alt="currencyimg" width="100%"  />
                     </div>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
@@ -248,7 +260,7 @@ const Home = () => {
                                         </Grid>
                                         <Grid item xs={6}>
                                             <Box fontWeight="fontWeightBold" fontSize="h6.fontSize" m={1}>
-                                                <Paper  style={{boxShadow:"none"}} className={classes.paper}>0,25%</Paper>
+                                                <Paper  style={{boxShadow:"none"}} className={classes.paper}><img src="/Group.png" style={{paddingRight:"10px"}} alt="group" />0,25%</Paper>
                                                 <Paper style={{boxShadow:"none",color:"#47C278",borderRadius:"50px 50px",border:" 2px solid #47C278", margin:"0px 47px", fontSize:"15px"}} className={classes.paper}>30 days</Paper>
                                                 <Paper style={{boxShadow:"none"}} className={classes.paper}>48 Hour(s)</Paper>
                                             </Box>
@@ -261,7 +273,7 @@ const Home = () => {
                                         
                                         <Grid item xs={6}>
                                         <Paper style={{boxShadow:"none", textAlign:"left"}} className={classes.paper}>Earned</Paper>
-                                        <Paper style={{boxShadow:"none", textAlign:"left"}} className={classes.paper}>--USxD</Paper>
+                                        <Paper style={{boxShadow:"none", textAlign:"left", fontWeight:700,fontSize:"18px"}} className={classes.paper}>--USxD</Paper>
                                         
                                             
                                         </Grid>
@@ -278,7 +290,7 @@ const Home = () => {
                                         
                                     </Grid>
                                     <Button variant="contained" color="primary" style={{padding:"16px", marginTop:"20px", width:"100%",
-                                    borderRadius:"12px", backgroundColor:"#47C278", fontSize:"16px",lineHeight:"24px"}}>Authorize BUSD</Button>
+                                    borderRadius:"12px", backgroundColor:"#47C278", fontSize:"16px",lineHeight:"24px", fontWeight:700}}>Authorize BUSD</Button>
                                     
                                     
                                 </Box>
@@ -292,65 +304,75 @@ const Home = () => {
 
             <div style={{ backgroundImage: "url()",paddingTop:"100px", paddingBottom:"100px",backgroundRepeat: 'no-repeat' }}>
                 <Container> 
-                    <h1 style={{ fontSize: "60px",lineHeight:"84px", letterSpacing:"0em",fontWeight:700, color: "black" }}>Network Building</h1>
-                    <p style={{ marginTop: "50px" }}>Get access to thousands of partners and exponential profits from infinite referrals</p>
-                    <Grid container style={{ display: "flex", marginTop: "50px",  textAlign:"left" }}>
+                    <div style={{position:"relative"}}>
+                        <h1 style={{ fontSize: "60px",lineHeight:"84px",textAlign:"center", letterSpacing:"0em",fontWeight:700, color: "black" }}>Network Building</h1>
+                        <img src="/section3-title-line.png" className="section-4" alt="currencyimg" width="100%"  />
+                        <p className="get_subtitle">Get access to thousands of partners and exponential profits from infinite referrals</p>
+                    </div>
+                    <Grid container spacing={3} >
                         <Grid item xs={12} sm={4}>
-                            <Card className="card" style={{ padding:"10px", boxShadow:"none" }}>
-                                <CardActionArea>
-                                    <img src="/section3-network-3.png" alt="package" height="140" />
+                            <div className="box-2">
+                            <Card className="card">
+                                <CardMedia>
+                                    <img src="/section3-network-1.png" className="card_img" alt="package" height="140" />
                                     <CardContent>
                                         <h4>Network License </h4>
-                                        <h1> 300 BUSD</h1>
-                                    <p> Make aprafit with two Network layers</p>
-                                    <p>Ex: Earn 0,03% Daily of 1,000 BUSD</p>
+                                        <h1 className="threehundred"> 300 <span className="busd">BUSD</span></h1>
+                                    <p className="para"> Make aprafit with <strong style={{color:"black"}}>two</strong> Network layers</p>
+                                    <p className="para">Ex: Earn 0,03% Daily of 1,000 BUSD</p>
 
                                     </CardContent>
-                                </CardActionArea>
-                                <Button variant="contained" fullWidth color="primary" style={{textTransform: "capitalize", padding:"10px", backgroundColor:"#47C278", borderRadius: "12px"}}  >
+                                </CardMedia>
+                                <Button variant="contained"  fullWidth color="primary" className="active_btn"  >
                                     Active License
                                 </Button>
                             </Card>
+                            </div>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Card className="card"style={{ padding:"10px", boxShadow:"none"  }}>
-                                <CardActionArea>
-                                    <img src="/section3-network-2.png" alt="nice" height="140" />.
-
+                            <div className="box-2">
+                            <Card className="card">
+                                <CardMedia>
+                                    <img src="/section3-network-2.png" className="card_img" alt="package" height="140" />
                                     <CardContent>
+                                        <h4>Growth Hacking License </h4>
+                                        <h1 className="threehundred"> 1,200 <span className="busd">BUSD</span></h1>
+                                    <p className="para"> Make aprafit with <strong style={{color:"black"}}>four</strong> Network layers</p>
+                                    <p className="para">Ex: Earn 0,03% Daily of 2,000 BUSD</p>
 
-                                    <h4>Growth Hacking License </h4>
-                                    <h1> 1,200 BUSD</h1>
-                                    <p> Make aprafit with four Network layers</p>
-                                    <p>Ex: Earn 0,03% Daily of 2,000 BUSD</p>
                                     </CardContent>
-                                </CardActionArea>
-                                <Button variant="contained" fullWidth color="primary" style={{textTransform: "capitalize", padding:"10px", backgroundColor:"#47C278", borderRadius: "12px"}} >
+                                </CardMedia>
+                                <Button variant="contained"  fullWidth color="primary" className="active_btn"  >
                                     Active License
                                 </Button>
                             </Card>
+                            </div>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Card className="card" style={{ padding:"10px" , boxShadow:"none" }}>
-                                <CardActionArea>
-                                    <img src="/section3-network-3.png" alt="package" height="140" />
+                            <div className="box-2">
+                            <Card className="card">
+                                <CardMedia>
+                                    <img src="/section3-network-3.png" className="card_img" alt="package" height="140" />
                                     <CardContent>
+                                        <h4>Network License </h4>
+                                        <h1 className="threehundred"> 300 <span className="busd">BUSD</span></h1>
+                                    <p className="para"> Make aprafit with <strong style={{color:"black"}}>eight</strong> Network layers</p>
+                                    <p className="para">Ex: Earn 0,03% Daily of 4,000 BUSD</p>
 
-                                    <h4>Leadership License </h4>
-                                    <h1> 3,500 BUSD</h1>
-                                    <p> Make aprafit with eight Network layers</p>
-                                    <p>Ex: Earn 0,03% Daily of 4,000 BUSD</p>
                                     </CardContent>
-                                </CardActionArea>
-                                <Button variant="contained" fullWidth color="primary" style={{textTransform: "capitalize", padding:"10px", backgroundColor:"#47C278", borderRadius: "12px"}}  >
+                                </CardMedia>
+                                <Button variant="contained"  fullWidth color="primary" className="active_btn"  >
                                     Active License
                                 </Button>
                             </Card>
+                            </div>
                         </Grid>
                     </Grid>
                 </Container>
             </div>
+            {/* <Footer /> */}
         </div>
+        
     )
 };
 

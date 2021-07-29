@@ -7,15 +7,13 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import { ArrowUpward, SupervisorAccount, Twitter, Facebook, Telegram, YouTube } from '@material-ui/icons';
-
+import './Register.css'
 
 const RegisterStep3Activation = () => {
 
     useEffect(() => {
         document.title = "RegisterStep3Activation"
     }, [])
-
-
 
     return (
         <div>

@@ -14,6 +14,8 @@ import Paper from '@material-ui/core/Paper';
 import { CheckBox } from '@material-ui/icons';
 import { Close } from '@material-ui/icons';
 import Typography from '@material-ui/core/Typography';
+import './Register.css'
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         backdrop: {
@@ -57,7 +59,7 @@ const RegisterConnectWallet = () => {
     return (
         <div>
             <Container>
-                <h1>Register</h1>
+                <h2 className="title">Register</h2>
                 <div >
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>

@@ -14,8 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import { ErrorOutlineRounded } from '@material-ui/icons';
 import {CheckCircleOutline} from '@material-ui/icons'
-
-
+import './Register.css'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

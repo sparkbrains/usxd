@@ -14,7 +14,7 @@ import Paper from '@material-ui/core/Paper';
 import {CheckBox} from '@material-ui/icons';
 import {Close} from '@material-ui/icons';
 import Typography from '@material-ui/core/Typography';
-
+import  './Login.css'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     backdrop: {
@@ -57,12 +57,12 @@ const Login = () => {
     }, [])
     return (
         <div>
-            <Container>
-            <h1>Login</h1>
+            <Container style={{padding:"40px"}}>
+            <h4 className="log_in">Login</h4>
                 <div>
-                <Grid container spacing={3}>
+                <Grid container spacing={6}>
                     <Grid item xs={12} sm={6}>
-                        <Card className="card" raised={true} style={{ padding:"45px", borderRadius: "30px"  }}>
+                        <Card className="card" raised={true} style={{ padding:"20px", borderRadius: "30px"  }}>
                             <CardActionArea>
                                 <h1> Login to Personad USxB</h1>
                                 <p>Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging</p>
@@ -82,7 +82,7 @@ const Login = () => {
                                 </Button>
                             </Grid>
                             <Grid container className="link">
-                                <Grid item sm={6}  >
+                                <Grid item sm={6} style={{padding:"20px"}} >
 
 
                                     <Link href="" variant="body2">
@@ -90,7 +90,7 @@ const Login = () => {
                                     </Link>
 
                                 </Grid>
-                                <Grid item sm={6}>
+                                <Grid item sm={6} style={{padding:"20px"}}>
                                     <Link href="" variant="body2" style={{color:"#47C278"}}>
                                         {"Registration in USxD"}
                                         
