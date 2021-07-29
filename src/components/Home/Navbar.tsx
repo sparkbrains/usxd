@@ -53,11 +53,6 @@ import SwapConfirmed from '../Swap/SwapConfirmed';
 import Sidebar from './Sidebar';
 import SidebarFooter from './SidebarFooter';
 
-
-
-
-
-
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -167,7 +162,6 @@ export default function ButtonAppBar() {
                 <Route path="/RegisterStep3Activation">
                     <RegisterStep3Activation />
                 </Route>
-
                 <Route path="/Registerstep2dropdown">
                     <Registerstep2dropdown />
                 </Route>
@@ -207,8 +201,6 @@ export default function ButtonAppBar() {
                 <Route path="/Networkbuildingactivated">
                     <Networkbuildingactivated />
                 </Route>
-
-
                 <Route path="/Coiningpackage">
                     <Coiningpackage />
                 </Route>
@@ -263,19 +255,6 @@ export default function ButtonAppBar() {
                 <Route path="/SidebarFooter">
                     <SidebarFooter />
                 </Route>
-
-
-
-
-
-
-
-
-
-
-
-
-
             </Switch>
         </Router>
     );

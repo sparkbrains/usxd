@@ -138,12 +138,7 @@ const Home = () => {
                                 <Typography component="p" style={{fontSize:"18px",fontWeight:600, lineHeight:"28px"}}>
                                             Global payment method
                                         </Typography>
-<<<<<<< HEAD
                                 </CardContent>
-=======
-                                    </CardContent>
-                                </CardActionArea>
->>>>>>> f1349dd2def1787c9d8ef92a791c79bdab9e00cc
                             </Card>
                             </Box>
                         </Grid>
